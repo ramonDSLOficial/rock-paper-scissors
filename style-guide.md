@@ -13,15 +13,15 @@ The designs were created to the following widths:
 
 ### Primary
 
-scissors: 'hsl(39, 89%, 49%)',
+scissorsAccent: 'hsl(39, 89%, 49%)',
 scissorsShadow: 'hsl(28, 76%, 44%)',
-paper: 'hsl(230, 89%, 62%)',
+paperAccent: 'hsl(230, 89%, 62%)',
 paperShadow: 'hsl(229, 64%, 46%)',
-rock: 'hsl(349, 71%, 52%)',
+rockAccent: 'hsl(349, 71%, 52%)',
 rockShadow: 'hsl(347, 75%, 35%)',
-lizard: 'hsl(261, 73%, 60%)',
+lizardAccent: 'hsl(261, 73%, 60%)',
 lizardShadow: 'hsl(261, 51%, 44%)',
-spock: 'hsl(189, 59%, 53%)',
+spockAccent: 'hsl(189, 59%, 53%)',
 spockShadow: 'hsl(194, 58%, 42%)',
 
 ### Neutral
@@ -29,9 +29,9 @@ spockShadow: 'hsl(194, 58%, 42%)',
 - Navy 900 (dark text): hsl(229, 25%, 31%)
 - Blue 700 (score text): hsl(229, 64%, 46%)
 - Gray 600 (header outline): hsl(246, 11%, 37%)
-primary: 'hsl(229, 25%, 31%)',
-secundary: 'hsl(229, 64%, 46%)',
-tertiary: 'hsl(246, 11%, 37%)',
+text: 'hsl(229, 25%, 31%)',
+scoreText: 'hsl(229, 64%, 46%)',
+outline: 'hsl(246, 11%, 37%)',
 
 ### Background
 
