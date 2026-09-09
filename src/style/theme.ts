@@ -15,10 +15,16 @@ export const theme: DefaultTheme = {
 			spockShadow: 'hsl(194, 58%, 42%)',
 		},
 		neutral: {
-			text: 'hsl(229, 25%, 31%)',
-			scoreText: 'hsl(229, 64%, 46%)',
-			outline: 'hsl(246, 11%, 37%)',
-			gradient: 'hsl(214, 47%, 23%), hsl(237, 48%, 15%)',
+			text: {
+				scoreValueText: 'hsl(229, 25%, 31%)',
+				scoreText: 'hsl(229, 64%, 46%)',
+				textT1: '#fff',
+			},
+			badge: {
+				outline: 'hsl(246, 11%, 37%)',
+				gradient: 'hsl(214, 47%, 23%), hsl(237, 48%, 15%)',
+				bgColor: '#fff'
+			}
 		},
 	},
 	fontWeight: {

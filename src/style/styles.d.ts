@@ -16,10 +16,16 @@ declare module 'styled-components' {
 				spockShadow: string;
 			};
 			neutral: {
-				text: string;
-				scoreText: string;
-				outline: string;
-				gradient: string;
+				text: {
+					scoreText: string;
+					scoreValueText: string;
+					textT1: string;
+				};
+				badge: {
+					outline: string;
+					gradient: string;
+					bgColor: string;
+				};
 			};
 		};
 		fontWeight: {
