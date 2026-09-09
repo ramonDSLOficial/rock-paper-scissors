@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import ModalRulesBtn from './components/ModalRulesBtn';
 import Rules from './pages/Rules';
+import Game from './pages/Game';
 
 const App: React.FC = () => {
 	return (
@@ -12,7 +13,8 @@ const App: React.FC = () => {
 			<Header />
 
 			<Main>
-				<Home />
+				{/* <Home /> */}
+				<Game />
 
 				<ModalRulesBtn />
 				<Rules />
