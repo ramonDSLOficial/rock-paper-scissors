@@ -19,7 +19,7 @@ declare module 'styled-components' {
 				text: string;
 				scoreText: string;
 				outline: string;
-				radialGradient: string;
+				gradient: string;
 			};
 		};
 		fontWeight: {

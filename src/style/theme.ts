@@ -18,7 +18,7 @@ export const theme: DefaultTheme = {
 			text: 'hsl(229, 25%, 31%)',
 			scoreText: 'hsl(229, 64%, 46%)',
 			outline: 'hsl(246, 11%, 37%)',
-			radialGradient: 'hsl(214, 47%, 23%) to hsl(237, 48%, 15%)',
+			gradient: 'hsl(214, 47%, 23%), hsl(237, 48%, 15%)',
 		},
 	},
 	fontWeight: {
