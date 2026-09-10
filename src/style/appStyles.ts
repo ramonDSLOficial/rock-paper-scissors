@@ -11,6 +11,9 @@ export const Container = styled.div`
 		`${props.theme.color.neutral.badge.outline} linear-gradient(to bottom, ${props.theme.color.neutral.badge.gradient})`};
 
     & main {
+        display: grid;
+        place-items: center;
+        width: 80%;
         flex: .85;
     }
 `;

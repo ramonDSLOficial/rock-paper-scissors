@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { type ButtonHTMLAttributes } from 'react';
 
 import { Container, Image } from './styles';
 import type { Moves } from '../../types/types';
 
-interface MoveProps {
+interface MoveProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	move: Moves;
 }
 
-const Move: React.FC<MoveProps> = ({ move }) => {
+const Move: React.FC<MoveProps> = ({ move, ...props }) => {
 	return (
-		<Container>
-			<Image src={`./images/icon-${move}.svg`} alt={`throw ${move}`} />
+		<Container $move={move} {...props}>
+			<Image
+				$move={move}
+				src={`./images/icon-${move}.svg`}
+				alt={`throw ${move}`}
+			/>
 		</Container>
 	);
 };
