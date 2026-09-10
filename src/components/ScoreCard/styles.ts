@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// NOTE diminuir o gap, agora que a fonte está pegando, está dando uma diferença chata
 export const Container = styled.dl`
     display: grid;
     place-items: center;
