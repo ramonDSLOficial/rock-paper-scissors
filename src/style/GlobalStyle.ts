@@ -3,8 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
     @font-face {
         font-family: 'Barlow Semi Condensed';
-        /* NOTE faltou por o complemento */
-        src: url('/font/BarlowSemiCondensed-Bold.woff') format('woff'), url('/font/BarlowSemiCondensed-SemiBold.woff') format('woff');
+        src: url('/rock-paper-scissors/font/BarlowSemiCondensed-Bold.woff') format('woff'), url('/font/BarlowSemiCondensed-SemiBold.woff') format('woff');
         font-weight: 600;
         font-style: normal;
         font-display: swamp;
