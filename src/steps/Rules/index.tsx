@@ -4,13 +4,16 @@ import { CloseBtn, Container, RulesImage, Title } from './styles';
 
 const Rules: React.FC = () => {
 	return (
-		<Container>
+		<Container open>
 			<Title>rules</Title>
-            
-			<RulesImage alt="./images/image-rules.svg" />
-            
-			<CloseBtn>
-				<img src="./images/icon-close.svg" alt="close rules" />
+
+			<RulesImage
+				src="./images/image-rules.svg"
+				alt="rules: scissors beats paper. paper beats rock. rock beats scissors."
+			/>
+
+			<CloseBtn title='close rules'>
+				<img src="./images/icon-close.svg" alt="" />
 			</CloseBtn>
 		</Container>
 	);
