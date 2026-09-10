@@ -5,7 +5,7 @@ interface MoveStyledProps {
 	$move?: Moves;
 }
 
-const boxShadow = 'inset 0 6.32px 0 #babed2;';
+const boxShadow = 'inset 0 6.32px 0 #babed2b2;';
 
 const moveColor = css<MoveStyledProps>`
 	background-clip: padding-box;
@@ -72,7 +72,7 @@ export const Container = styled.button<MoveStyledProps>`
 	border-radius: 50%;
 	border: 12px solid;
 	${moveColor}
-	padding: 6.796vw 7.365vw;
+	padding: 6.865vw;
 	line-height: 0;
 `;
 
