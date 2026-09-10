@@ -8,6 +8,8 @@ interface MoveStyledProps {
 const boxShadow = 'inset 0 6.32px 0 #babed2;';
 
 const moveColor = css<MoveStyledProps>`
+	background-clip: padding-box;
+	
 	${({ $move }) => {
 		switch ($move) {
 			case 'rock':
