@@ -1,7 +1,23 @@
 import styled from 'styled-components';
 
-export const Container = styled.dl``;
+export const Container = styled.dl`
+    display: grid;
+    place-items: center;
+    gap: 1.5px;
+	background-color: ${(props) => props.theme.color.neutral.badge.bgColor};
+	border-radius: 6px;
+    padding: 3.5% 8.5%;
+`;
 
-export const ScoreText = styled.dt``;
+export const ScoreText = styled.dt`
+	color: ${(props) => props.theme.color.neutral.text.scoreText};
+    font-weight: ${(props) => props.theme.fontWeight.bold};
+	letter-spacing: 1px;
+`;
 
-export const ScoreValue = styled.dd``;
+export const ScoreValue = styled.dd`
+	color: ${(props) => props.theme.color.neutral.text.scoreValueText};
+	font-size: 4rem;
+	font-weight: ${(props) => props.theme.fontWeight.bold};
+    letter-spacing: -1px;
+`;

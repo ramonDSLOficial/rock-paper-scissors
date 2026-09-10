@@ -6,7 +6,7 @@ const ScoreCard: React.FC = () => {
   return (
     <Container>
         <ScoreText>score</ScoreText>
-        <ScoreValue>13</ScoreValue>
+        <ScoreValue>11</ScoreValue>
     </Container>
   );
 }

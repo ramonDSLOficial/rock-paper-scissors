@@ -21,7 +21,5 @@ export const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Barlow Semi Condensed', sans-serif;
         text-transform: uppercase;
-        width: 100%;
-        min-height: 100dvh;
     }
 `;

@@ -1,5 +1,22 @@
 import styled from 'styled-components';
 
-export const Container = styled.header``;
+export const Container = styled.header`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2.5vw;
+    padding-left: 5.5vw;
+    outline: 3px solid ${props => props.theme.color.neutral.badge.outline};
+    border-radius: 3px;
+    width: 85%;
+`;
 
-export const LogoTitle = styled.h1``;
+export const LogoTitle = styled.h1`
+    line-height: 0;
+
+    & img {
+        display: block;
+        height: 100%;
+        width: min(58%, 16rem);
+    }
+`;
