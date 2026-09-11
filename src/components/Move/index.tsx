@@ -4,17 +4,19 @@ import { Container, Image } from './styles';
 import type { Moves } from '../../types/types';
 
 interface MoveProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	move: Moves;
+	move?: Moves;
 }
 
 const Move: React.FC<MoveProps> = ({ move, ...props }) => {
 	return (
 		<Container $move={move} {...props}>
-			<Image
-				$move={move}
-				src={`./images/icon-${move}.svg`}
-				alt={`throw ${move}`}
-			/>
+			{move && (
+				<Image
+					$move={move}
+					src={`./images/icon-${move}.svg`}
+					alt={`throw ${move}`}
+				/>
+			)}
 		</Container>
 	);
 };
