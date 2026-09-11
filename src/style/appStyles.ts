@@ -15,10 +15,9 @@ export const Main = styled.main`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-around;
-	padding: 10vh 0 4vh 0;
+	justify-content: center;
 	width: 80%;
-	flex: 0.61;
+	flex: 0.85;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
 		justify-content: space-around;

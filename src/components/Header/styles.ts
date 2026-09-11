@@ -9,6 +9,10 @@ export const Container = styled.header`
     outline: 3px solid ${props => props.theme.color.neutral.badge.outline};
     border-radius: 3px;
     width: 85%;
+
+    @media screen and (max-width: 380px) and (max-height: 650px) {
+        margin-bottom: 13%;
+    }
 `;
 
 export const LogoTitle = styled.h1`
