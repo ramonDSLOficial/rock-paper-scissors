@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import type { Moves } from '../../types/types';
 
 interface MoveStyledProps {
