@@ -1,14 +1,14 @@
 import React from 'react';
 
-import { Container, ScoreText, ScoreValue } from './styles';
+import { Container, textT2, ScoreValue } from './styles';
 
 const ScoreCard: React.FC = () => {
-  return (
-    <Container>
-        <ScoreText>score</ScoreText>
-        <ScoreValue>11</ScoreValue>
-    </Container>
-  );
-}
+	return (
+		<Container>
+			<textT2>score</textT2>
+			<ScoreValue>11</ScoreValue>
+		</Container>
+	);
+};
 
 export default ScoreCard;

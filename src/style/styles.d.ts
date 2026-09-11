@@ -17,8 +17,8 @@ declare module 'styled-components' {
 			};
 			neutral: {
 				text: {
-					scoreText: string;
-					scoreValueText: string;
+					textT2: string;
+					textT0: string;
 					textT1: string;
 				};
 				badge: {

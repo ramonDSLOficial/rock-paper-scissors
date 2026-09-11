@@ -16,15 +16,15 @@ export const theme: DefaultTheme = {
 		},
 		neutral: {
 			text: {
-				scoreValueText: 'hsl(229, 25%, 31%)',
-				scoreText: 'hsl(229, 64%, 46%)',
+				textT0: 'hsl(229, 25%, 31%)',
 				textT1: '#fff',
+				textT2: 'hsl(229, 64%, 46%)',
 			},
 			badge: {
 				outline: 'hsl(246, 11%, 37%)',
 				gradient: 'hsl(214, 47%, 23%), hsl(237, 48%, 15%)',
-				bgColor: '#fff'
-			}
+				bgColor: '#fff',
+			},
 		},
 	},
 	fontWeight: {
