@@ -4,7 +4,7 @@ import { CloseBtn, Container, RulesImage, Title } from './styles';
 
 const Rules: React.FC = () => {
 	return (
-		<Container open>
+		<Container>
 			<Title>rules</Title>
 
 			<RulesImage

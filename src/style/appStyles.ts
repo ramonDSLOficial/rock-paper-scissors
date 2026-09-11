@@ -19,4 +19,10 @@ export const Main = styled.main`
 	padding: 10vh 0 4vh 0;
 	width: 80%;
 	flex: 0.85;
+
+	@media screen and (max-width: 380px) and (max-height: 650px) {
+		justify-content: space-around;
+		gap: 3vh;
+		flex: 0.72;
+	}
 `;
