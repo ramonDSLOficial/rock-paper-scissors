@@ -13,8 +13,8 @@ const App: React.FC = () => {
 			<Header />
 
 			<Main>
-				<Home />
-				{/* <Game /> */}
+				{/* <Home /> */}
+				<Game />
 
 				<ModalRulesBtn />
 				<Rules />

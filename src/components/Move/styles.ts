@@ -18,21 +18,28 @@ const moveAccentShadow = `
 `;
 */
 export const Container = styled.button<MoveStyledProps>`
-	border: 12px solid;
-	padding: 6.865vw;
+	border: 12px solid transparent;
 	border-radius: 50%;
 	line-height: 0;
+	transition: all .5s ease-in-out;
 
 	${({ $move, theme: { color } }) => {
 		if ($move)
 			return css`
-				background-color: ${color.neutral.badge.bgColor};
+				padding: 6.865vw;
+				background-color: ${color.neutral.badge.bgColorT1};
 				background-clip: padding-box;
 				border-color: ${color.moves[$move + 'Accent']};
 				box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']},
 					${boxShadow};
 			`;
-		else return css``;
+		else
+			return css`
+				padding: 4.465vw;
+				background-clip: border-box;
+				background-color: ${props => props.theme.color.neutral.badge.bgColorT2};
+				filter: opacity(0.5);
+			`;
 	}}
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
@@ -59,9 +66,11 @@ export const Container = styled.button<MoveStyledProps>`
 
 export const Image = styled.img<MoveStyledProps>`
 	display: block;
+	visibility: ${({ $move }) => $move ? 'initial' : 'hidden'};
 	width: max(6.768vw, 4.85rem);
 	height: max(6.768vw, 4.85rem);
 	object-fit: scale-down;
+	transition: all .5s ease-in-out;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
 		width: 2.8rem;

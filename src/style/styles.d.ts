@@ -24,7 +24,8 @@ declare module 'styled-components' {
 				badge: {
 					outline: string;
 					gradient: string;
-					bgColor: string;
+					bgColorT1: string;
+					bgColorT2: string;
 				};
 			};
 		};

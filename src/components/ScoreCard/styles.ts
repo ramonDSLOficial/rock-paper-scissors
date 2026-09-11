@@ -4,7 +4,7 @@ export const Container = styled.dl`
 	display: grid;
 	place-items: center;
 	gap: 1.5px;
-	background-color: ${(props) => props.theme.color.neutral.badge.bgColor};
+	background-color: ${(props) => props.theme.color.neutral.badge.bgColorT1};
 	border-radius: 6px;
 	padding: 3.5% 8.5%;
 `;

@@ -18,7 +18,7 @@ export const Main = styled.main`
 	justify-content: space-around;
 	padding: 10vh 0 4vh 0;
 	width: 80%;
-	flex: 0.85;
+	flex: 0.61;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
 		justify-content: space-around;

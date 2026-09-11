@@ -7,10 +7,10 @@ const Game: React.FC = () => {
   return (
     <Container>
         <PlayerField move='rock' player='you picked'/>
-        <PlayerField move='paper' player='the house picked'/>
+        <PlayerField player='the house picked'/>
         
-        <ResultContainer>
-            <Message>you win</Message>
+        <ResultContainer id='result' className='visible'>
+            <Message>you lose</Message>
             <RestartBtn>play again</RestartBtn>
         </ResultContainer>
     </Container>

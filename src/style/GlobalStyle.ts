@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     html { font-size: 62.5% }
+
+    button {
+        text-transform: uppercase;
+    }
     
     html,
     body {

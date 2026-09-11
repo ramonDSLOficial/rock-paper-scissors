@@ -6,7 +6,7 @@ import type { Moves } from '../../../types/types';
 
 interface PlayerFieldProps {
 	player: string;
-	move: Moves
+	move?: Moves;
 }
 
 const PlayerField: React.FC<PlayerFieldProps> = ({ player, move }) => {

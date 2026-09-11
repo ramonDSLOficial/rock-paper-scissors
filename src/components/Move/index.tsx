@@ -10,13 +10,11 @@ interface MoveProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Move: React.FC<MoveProps> = ({ move, ...props }) => {
 	return (
 		<Container $move={move} {...props}>
-			{move && (
-				<Image
-					$move={move}
-					src={`./images/icon-${move}.svg`}
-					alt={`throw ${move}`}
-				/>
-			)}
+			<Image
+				$move={move}
+				src={move ? `./images/icon-${move}.svg` : ''}
+				alt={move ? `throw ${move}` : ''}
+			/>
 		</Container>
 	);
 };
