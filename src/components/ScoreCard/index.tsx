@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { Container, textT2, ScoreValue } from './styles';
+import { Container, ScoreText, ScoreValue } from './styles';
 
 const ScoreCard: React.FC = () => {
 	return (
 		<Container>
-			<textT2>score</textT2>
+			<ScoreText>score</ScoreText>
 			<ScoreValue>11</ScoreValue>
 		</Container>
 	);
