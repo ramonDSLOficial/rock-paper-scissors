@@ -18,7 +18,7 @@ export const ScoreText = styled.dt`
 
 export const ScoreValue = styled.dd`
 	color: ${(props) => props.theme.color.neutral.text.textT0};
-	font-size: 4rem;
+	font-size: clamp(3.8rem, 1.14rem + 2.77vw, 5.5rem);
 	font-weight: ${(props) => props.theme.fontWeight.bold};
 	line-height: .8;
 `;

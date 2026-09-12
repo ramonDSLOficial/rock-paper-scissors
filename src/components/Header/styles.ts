@@ -8,7 +8,7 @@ export const Container = styled.header`
     padding-left: 5.5vw;
     outline: 3px solid ${props => props.theme.color.neutral.badge.outline};
     border-radius: 3px;
-    width: 85%;
+    width: min(85%, 60rem);
 
     @media screen and (max-width: 380px) and (max-height: 650px) {
         margin-bottom: 13%;
@@ -21,6 +21,6 @@ export const LogoTitle = styled.h1`
     & img {
         display: block;
         height: 100%;
-        width: min(58%, 16rem);
+        width: min(65%, 24rem);
     }
 `;
