@@ -21,7 +21,7 @@ export const Container = styled.button<MoveStyledProps>`
 	border: min(3.2vw, 1.4rem) solid transparent;
 	border-radius: 50%;
 	line-height: 0;
-	transition: all .5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 
 	${({ $move, theme: { color } }) => {
 		if ($move)
@@ -35,26 +35,18 @@ export const Container = styled.button<MoveStyledProps>`
 			`;
 		else
 			return css`
-				padding: 4.465vw;
+				padding: min(3.965vw, 2.334rem);
 				background-clip: border-box;
-				background-color: ${props => props.theme.color.neutral.badge.bgColorT2};
+				background-color: ${(props) =>
+					props.theme.color.neutral.badge.bgColorT2};
 				filter: opacity(0.5);
 			`;
 	}}
 
-	@media screen and (max-width: 380px) and (max-height: 650px) {
-		padding: 4.568vw;
-		border-width: 7.59px;
-		${({ $move, theme: { color } }) =>
-			$move
-				? `box-shadow: 0 4.869px 0 ${
-						color.moves[$move + 'Shadow']
-				  }, ${boxShadow}`
-				: ''}
-	}
-	@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
-		padding: 5.437vw;
+	@media screen and (max-width: 680px) and (max-height: 650px) {
+		padding: 5.237vw;
 		border-width: 8.568px;
+
 		${({ $move, theme: { color } }) =>
 			$move
 				? `box-shadow: 0 4.869px 0 ${
@@ -66,15 +58,15 @@ export const Container = styled.button<MoveStyledProps>`
 
 export const Image = styled.img<MoveStyledProps>`
 	display: block;
-	visibility: ${({ $move }) => $move ? 'initial' : 'hidden'};
-	width: min(9.768vw, 3.85rem);
-	height: min(9.768vw, 3.85rem);
+	visibility: ${({ $move }) => ($move ? 'initial' : 'hidden')};
+	width: min(10.868vw, 3.85rem);
+	height: min(10.868vw, 3.85rem);
 	object-fit: scale-down;
-	transition: all .5s ease-in-out;
+	transition: all 0.5s ease-in-out;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
-		width: 2.8rem;
-		height: 2.6rem;
+		width: 3.2rem;
+		height: 3rem;
 	}
 	@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
 		width: 3.8rem;

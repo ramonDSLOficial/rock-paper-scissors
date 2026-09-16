@@ -4,53 +4,49 @@ import { Container as Move } from '../../components/Move/styles';
 export const Container = styled.section`
 	position: relative;
 	background: url('./images/bg-triangle.svg') center no-repeat;
+	background-size: 100%;
+	flex: .55;
 	background-size: contain;
-	flex: 0.45;
-	width: 100%;
+	width: min(68%, 38rem);
 
 	& ${Move} {
 		position: absolute;
 
 		&#rock {
-			bottom: 0;
-			left: 50%;
-			transform: translate(-50%, 30%);
+			bottom: 9.5%;
+			transform: translateX(min(50%, 5.9rem));
+		}
+		&#paper,
+		&#scissors {
+			top: 0;
 		}
 		&#paper {
-			transform: translate(10%, -35%);
+			left: min(-4%, -3.6rem);
 		}
 		&#scissors {
-			right: 5%;
-			transform: translateY(-35%);
+			right: min(-4%, -3.6rem);
 		}
-
-		@media screen and (max-width: 380px) and (max-height: 650px) {
+		@media screen and (max-width: 680px) and (max-height: 650px) {
 			&#rock {
-				transform: translate(-50%, 20%);
+				bottom: 4%;
+				left: 25.866%;
+				transform: unset;
+			}
+			&#paper,
+			&#scissors {
+				top: -15.5%;
 			}
 			&#paper {
-				transform: translate(52%, -50%);
+				left: -11%;
 			}
 			&#scissors {
-				right: 5%;
-				transform: translate(-38%, -50%);
+				right: -11%;
 			}
-		}
-		@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
-			&#rock {
-				transform: translate(-50%, 10%);
-			}
-			&#paper {
-				transform: translate(24.5%, -50%);
-			}
-			&#scissors {
-				right: 5%;
-				transform: translate(-10%, -50%);
-			}
-		}
+		}		
 	}
 
-	@media screen and (max-width: 380px) and (max-height: 650px) {
-		flex: 0.58;
+	@media screen and (max-width: 680px) and (max-height: 650px) {
+		background-size: contain;
+		flex: 0.85;
 	}
 `;
