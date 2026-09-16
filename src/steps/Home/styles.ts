@@ -13,6 +13,7 @@ export const Container = styled.section`
 		position: absolute;
 
 		&#rock {
+			/*// FIXME puxar um poco para a esquerda */
 			bottom: 9.5%;
 			transform: translateX(min(50%, 5.9rem));
 		}

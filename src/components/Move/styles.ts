@@ -26,7 +26,7 @@ export const Container = styled.button<MoveStyledProps>`
 	${({ $move, theme: { color } }) => {
 		if ($move)
 			return css`
-				padding: min(6.865vw, 2.668rem);
+				padding: min(6.865vw, 3.568rem);
 				background-color: ${color.neutral.badge.bgColorT1};
 				background-clip: padding-box;
 				border-color: ${color.moves[$move + 'Accent']};
@@ -59,8 +59,8 @@ export const Container = styled.button<MoveStyledProps>`
 export const Image = styled.img<MoveStyledProps>`
 	display: block;
 	visibility: ${({ $move }) => ($move ? 'initial' : 'hidden')};
-	width: min(10.868vw, 3.85rem);
-	height: min(10.868vw, 3.85rem);
+	width: min(12vw, 5.5rem);
+	height: min(12vw, 5.5rem);
 	object-fit: scale-down;
 	transition: all 0.5s ease-in-out;
 
