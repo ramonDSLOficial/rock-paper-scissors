@@ -18,7 +18,7 @@ const moveAccentShadow = `
 `;
 */
 export const Container = styled.button<MoveStyledProps>`
-	border: min(3.2vw, 1.4rem) solid transparent;
+	border: min(3.3vw, 1.8rem) solid transparent;
 	border-radius: 50%;
 	line-height: 0;
 	transition: all 0.5s ease-in-out;
@@ -26,7 +26,8 @@ export const Container = styled.button<MoveStyledProps>`
 	${({ $move, theme: { color } }) => {
 		if ($move)
 			return css`
-				padding: min(6.865vw, 3.568rem);
+				padding: min(6.865vw, 2.385rem);
+				/* 3.568 */
 				background-color: ${color.neutral.badge.bgColorT1};
 				background-clip: padding-box;
 				border-color: ${color.moves[$move + 'Accent']};
@@ -35,7 +36,7 @@ export const Container = styled.button<MoveStyledProps>`
 			`;
 		else
 			return css`
-				padding: min(3.965vw, 2.334rem);
+				padding: min(3.965vw, 1.964rem);
 				background-clip: border-box;
 				background-color: ${(props) =>
 					props.theme.color.neutral.badge.bgColorT2};
@@ -54,14 +55,36 @@ export const Container = styled.button<MoveStyledProps>`
 				  }, ${boxShadow}`
 				: ''}
 	}
+
+	@media screen and (min-width: 768px) {
+		${({ $move, theme: { color } }) => {
+			if ($move)
+				return css`
+					padding: min(6.865vw, 3.385rem);
+					/* 3.568 */
+					background-color: ${color.neutral.badge.bgColorT1};
+					background-clip: padding-box;
+					border-color: ${color.moves[$move + 'Accent']};
+					box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']},
+						${boxShadow};
+				`;
+			else
+				return css`
+					padding: min(3.965vw, 1.964rem);
+					background-clip: border-box;
+					background-color: ${(props) =>
+						props.theme.color.neutral.badge.bgColorT2};
+					filter: opacity(0.5);
+				`;
+		}}
+	}
 `;
 
 export const Image = styled.img<MoveStyledProps>`
 	display: block;
 	visibility: ${({ $move }) => ($move ? 'initial' : 'hidden')};
-	width: min(12vw, 5.5rem);
-	height: min(12vw, 5.5rem);
-	object-fit: scale-down;
+	width: min(12vw, 7rem);
+	height: min(12vw, 7rem);
 	transition: all 0.5s ease-in-out;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {

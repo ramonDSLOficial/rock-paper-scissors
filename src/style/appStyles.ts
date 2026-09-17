@@ -19,7 +19,7 @@ export const Main = styled.main`
 	width: 80%;
 	flex: 0.85;
 	padding-bottom: 4vh;
-
+	
 	& > section {
 		margin: auto 0;
 	}

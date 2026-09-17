@@ -15,4 +15,11 @@ export const Container = styled.button`
         margin-left: auto;
         transform: scale(.8);
     }
+    @media screen and (min-width: 768px) {
+        margin-top: 0;
+        margin-left: auto;
+    }
+    @media screen and (min-height: 980px) and (max-height: 1200px) {
+        margin-left: 0;
+    }
 `;
