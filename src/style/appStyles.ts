@@ -20,7 +20,7 @@ export const Main = styled.main`
 	flex: 0.85;
 	padding-bottom: 4vh;
 	
-	& > section {
+	section {
 		margin: auto 0;
 	}
 
@@ -28,5 +28,8 @@ export const Main = styled.main`
 		justify-content: space-around;
 		gap: 3vh;
 		flex: 0.72;
+	}
+	@media screen and (min-width: 768px) {
+		padding-bottom: 0;
 	}
 `;
