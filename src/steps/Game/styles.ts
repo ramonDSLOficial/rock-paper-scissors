@@ -6,9 +6,18 @@ export const Container = styled.section`
     grid-template-rows: 1fr .8fr;
     gap: 2.5vh 5vw;
     width: 100%;
+
+    @media screen and (min-width: 768px) {
+        grid-template-columns: repeat(2, minmax(200px, 35%));
+        justify-content: space-evenly;
+    }
 `;
 
 export const ResultContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2rem;
     text-align: center;
     grid-column: 1 / 3;
     transform: scale(0);
@@ -31,7 +40,7 @@ export const RestartBtn = styled.button`
     font-size: clamp(1.3rem, .88rem + 1.6vw, 1.8rem);
     font-weight: ${props => props.theme.fontWeight.bold};
     letter-spacing: 2px;
-    padding: 5% 18.8%;
+    padding: min(5%, 2rem) min(18.8%, 7.5rem);
     background-color: ${props => props.theme.color.neutral.badge.bgColorT1};
     border: none;
     border-radius: 10px;

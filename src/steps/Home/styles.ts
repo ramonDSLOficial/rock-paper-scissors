@@ -68,6 +68,7 @@ export const Container = styled.section`
 		background-size: contain;
 		flex: 0.85;
 	}
+	/* // NOTE retirar esse prioridade, removi lá no app */
 	@media screen and (min-width: 768px) {
 		flex: 0.9;
 

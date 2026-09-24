@@ -9,7 +9,7 @@ const Game: React.FC = () => {
         <PlayerField move='rock' player='you picked'/>
         <PlayerField player='the house picked'/>
         
-        <ResultContainer id='result' className='visible'>
+        <ResultContainer id='result' className=''>
             <Message>you lose</Message>
             <RestartBtn>play again</RestartBtn>
         </ResultContainer>
