@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Container, Main } from './style/appStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
