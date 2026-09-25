@@ -12,7 +12,6 @@ export const Container = styled.button`
 
     @media screen and (max-width: 380px) and (max-height: 650px) {
         margin-top: 0;
-        margin-left: auto;
         transform: scale(.8);
     }
     @media screen and (min-width: 768px) {
