@@ -18,7 +18,8 @@ export const Container = styled.button`
         margin-top: 0;
         margin-left: auto;
     }
-    @media screen and (min-height: 980px) and (max-height: 1200px) {
+    @media screen and (min-width: 768px) and (max-width: 850px)  and (min-height: 980px) {
         margin-left: 0;
+        margin-bottom: 10%;
     }
 `;
