@@ -81,4 +81,6 @@ export const Container = styled.section`
 			margin-top: 5rem;
 		}
 	}
+
+	/* mudar para contain o size da bg */
 `;
