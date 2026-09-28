@@ -27,7 +27,6 @@ export const Container = styled.button<MoveStyledProps>`
 		if ($move)
 			return css`
 				padding: min(6.865vw, 2.385rem);
-				/* 3.568 */
 				background-color: ${color.neutral.badge.bgColorT1};
 				background-clip: padding-box;
 				border-color: ${color.moves[$move + 'Accent']};
@@ -55,26 +54,28 @@ export const Container = styled.button<MoveStyledProps>`
 				  }, ${boxShadow}`
 				: ''}
 	}
-
 	@media screen and (min-width: 768px) {
-		${({ $move, theme: { color } }) => {
+		/* // NOTE ver se pode tirar o else, já que ele é exatamente igual ao anterior */
+		${({ $move }) => {
 			if ($move)
 				return css`
 					padding: min(6.865vw, 3.385rem);
-					/* 3.568 */
-					background-color: ${color.neutral.badge.bgColorT1};
-					background-clip: padding-box;
-					border-color: ${color.moves[$move + 'Accent']};
-					box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']},
-						${boxShadow};
 				`;
 			else
 				return css`
-					padding: min(3.965vw, 1.964rem);
-					background-clip: border-box;
-					background-color: ${(props) =>
-						props.theme.color.neutral.badge.bgColorT2};
-					filter: opacity(0.5);
+					padding: min(3.965vw, 1.664rem);
+				`;
+		}}
+	}
+	@media screen and (min-width: 1199px) {
+		${({ $move }) => {
+			if ($move)
+				return css`					
+					padding: min(6.865vw, 3.385rem) (6.865vw, 3.985rem);
+				`;
+			else
+				return css`
+					/* padding: min(3.965vw, 1.664rem); */
 				`;
 		}}
 	}
@@ -83,8 +84,8 @@ export const Container = styled.button<MoveStyledProps>`
 export const Image = styled.img<MoveStyledProps>`
 	display: block;
 	visibility: ${({ $move }) => ($move ? 'initial' : 'hidden')};
-	width: min(12vw, 7rem);
-	height: min(12vw, 7rem);
+	width: min(12vw, 5.66rem);
+	height: min(12vw, 5.66rem);
 	transition: all 0.5s ease-in-out;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
@@ -94,5 +95,11 @@ export const Image = styled.img<MoveStyledProps>`
 	@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
 		width: 3.8rem;
 		height: 3.8rem;
+	}
+	@media screen and (min-width: 1199px) {
+		width: min(8vw, 4.86rem);
+		height: min(8vw, 4.86rem);
+		width: min(8vw, 5.136rem);
+		height: min(8vw, 5.136rem);
 	}
 `;
