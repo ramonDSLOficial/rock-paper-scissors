@@ -97,8 +97,6 @@ export const Image = styled.img<MoveStyledProps>`
 		height: 3.8rem;
 	}
 	@media screen and (min-width: 1199px) {
-		width: min(8vw, 4.86rem);
-		height: min(8vw, 4.86rem);
 		width: min(8vw, 5.136rem);
 		height: min(8vw, 5.136rem);
 	}

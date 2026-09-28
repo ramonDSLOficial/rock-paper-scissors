@@ -62,25 +62,36 @@ export const Container = styled.section`
 				transform: translate(min(22%, 2.5rem), -5rem);
 			}
 		}
+		@media screen and (min-width: 1199px) {
+			&#paper,
+			&#scissors {
+				align-self: flex-end;
+			}
+			&#paper {
+				transform: translate(max(-2%, -2.5rem), max(-15%, -2.2rem));
+			}
+			&#scissors {
+				transform: translate(min(2%, 2.5rem), max(-15%, -2.2rem));
+			}
+		}
 	}
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
 		background-size: contain;
 		flex: 0.85;
 	}
-	/* // NOTE retirar esse prioridade, removi lá no app */
 	@media screen and (min-width: 768px) {
 		flex: 0.9;
-
-		&& {
-			margin: 2% 0 5% 0;
-		}
+		margin: 2% 0 5% 0;
 	}
 	@media screen and (min-width: 768px) and (max-height: 900px) {
 		&& {
 			margin-top: 5rem;
 		}
 	}
-
+	@media screen and (min-width: 1199px) {
+		background-size: 68%;
+		margin-top: 25%;
+	}
 	/* mudar para contain o size da bg */
 `;
