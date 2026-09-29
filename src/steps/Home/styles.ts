@@ -17,27 +17,28 @@ export const Container = styled.section`
 
 		&#rock {
 			grid-area: rock;
-			transform: translateY(max(-7%, -2rem));
+			transform: translateY(max(-13.23%, -2rem));
 			justify-self: center;
 		}
 		&#paper {
 			grid-area: paper;
-			transform: translateX(max(-22%, -2.5rem));
+			transform: translate(max(-27%, -6rem), max(-7.88%, -1.8rem));
 		}
 		&#scissors {
 			grid-area: scissors;
 			justify-self: flex-end;
-			transform: translateX(min(22%, 2.5rem));
+			transform: translate(min(27%, 6rem), max(-7.88%, -1.8rem));
 		}
 
 		@media screen and (max-width: 680px) and (max-height: 650px) {
 			&#rock {
+				transform: translateY(max(-15.23%, -2rem));
 			}
 			&#paper {
-				transform: translate(max(-22%, -2.5rem), max(-30%, -3rem));
+				transform: translate(max(-12%, -2.5rem), max(-30%, -3rem));
 			}
 			&#scissors {
-				transform: translate(min(22%, 2.5rem), max(-30%, -3rem));
+				transform: translate(min(12%, 2.5rem), max(-30%, -3rem));
 			}
 		}
 
