@@ -59,11 +59,11 @@ export const Container = styled.button<MoveStyledProps>`
 		${({ $move }) => {
 			if ($move)
 				return css`
-					padding: min(6.865vw, 3.385rem);
+					padding: min(6.865vw, 4.285rem);
 				`;
 			else
 				return css`
-					padding: min(3.965vw, 1.664rem);
+					padding: min(3.965vw, 2.464rem);
 				`;
 		}}
 	}
@@ -95,6 +95,10 @@ export const Image = styled.img<MoveStyledProps>`
 	@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
 		width: 3.8rem;
 		height: 3.8rem;
+	}
+	@media screen and (min-width: 768px) {
+		width: min(11.33vw, 6.895rem);
+		height: min(12vw, 6.895rem);
 	}
 	@media screen and (min-width: 1199px) {
 		width: min(8vw, 5.136rem);
