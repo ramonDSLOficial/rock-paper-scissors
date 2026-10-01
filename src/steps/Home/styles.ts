@@ -48,19 +48,18 @@ export const Container = styled.section`
 				align-self: center;
 			}
 			&#paper {
-				transform: translateX(max(-22%, -2.5rem));
-				/* subir o topo para para alturas menores que 1000 */
+				transform: translateX(max(-22%, -4rem));
 			}
 			&#scissors {
-				transform: translateX(min(22%, 2.5rem));
+				transform: translateX(min(22%, 4rem));
 			}
 		}
 		@media screen and (min-width: 768px) and (max-height: 900px) {
 			&#paper {
-				transform: translate(max(-22%, -2.5rem), -5rem);
+				transform: translate(max(-28%, -4rem), -5rem);
 			}
 			&#scissors {
-				transform: translate(min(22%, 2.5rem), -5rem);
+				transform: translate(min(28%, 4rem), -5rem);
 			}
 		}
 		@media screen and (min-width: 1199px) {
