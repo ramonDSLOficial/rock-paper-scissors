@@ -68,6 +68,8 @@ export const Container = styled.button<MoveStyledProps>`
 		}}
 	}
 	@media screen and (min-width: 1199px) {
+		border-width: min(3.33vw, 1.7rem);
+		
 		${({ $move }) => {
 			if ($move)
 				return css`					
