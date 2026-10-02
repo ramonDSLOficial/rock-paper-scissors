@@ -68,10 +68,10 @@ export const Container = styled.section`
 				align-self: flex-end;
 			}
 			&#paper {
-				transform: translate(max(-2%, -2.5rem), max(-15%, -2.2rem));
+				transform: translate(min(4.5%, 2.5rem), max(-22%, -3.5rem));
 			}
 			&#scissors {
-				transform: translate(min(2%, 2.5rem), max(-15%, -2.2rem));
+				transform: translate(max(-4.5%, -2.5rem), max(-22%, -3.5rem));
 			}
 		}
 	}

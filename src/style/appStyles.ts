@@ -10,6 +10,11 @@ export const Container = styled.div`
 	padding: 3.76vh 0;
 	background: ${(props) =>
 		`${props.theme.color.neutral.badge.outline} linear-gradient(to bottom, ${props.theme.color.neutral.badge.gradient})`};
+
+	@media screen and (min-width: 1199px) {
+		justify-content: space-evenly;
+		overflow: hidden;
+	}
 `;
 
 export const Main = styled.main`

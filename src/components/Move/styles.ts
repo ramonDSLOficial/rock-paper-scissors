@@ -71,11 +71,7 @@ export const Container = styled.button<MoveStyledProps>`
 		${({ $move }) => {
 			if ($move)
 				return css`					
-					padding: min(6.865vw, 3.385rem) (6.865vw, 3.985rem);
-				`;
-			else
-				return css`
-					/* padding: min(3.965vw, 1.664rem); */
+					padding: 2.385vw;
 				`;
 		}}
 	}
@@ -101,7 +97,8 @@ export const Image = styled.img<MoveStyledProps>`
 		height: min(12vw, 6.895rem);
 	}
 	@media screen and (min-width: 1199px) {
-		width: min(8vw, 5.136rem);
-		height: min(8vw, 5.136rem);
+		width: min(8vw, 4.954rem);
+		height: min(8vw, 5rem);
+		object-fit: contain;
 	}
 `;
