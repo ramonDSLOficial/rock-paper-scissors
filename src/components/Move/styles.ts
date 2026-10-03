@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import type { Moves } from '../../types/types';
+import { Container as Game } from '../../steps/Game/styles';
 
 interface MoveStyledProps {
 	$move?: Moves;
@@ -69,12 +70,26 @@ export const Container = styled.button<MoveStyledProps>`
 	}
 	@media screen and (min-width: 1199px) {
 		border-width: min(3.33vw, 1.7rem);
-		
+		${Game} & {
+			border-width: min(3.33vw, 2.2rem);
+		}
+
 		${({ $move }) => {
 			if ($move)
-				return css`					
+				return css`
 					padding: 2.385vw;
+
+					${Game} & {
+						padding: 3.456vw 4.265vw;
+					}
 				`;
+			else {
+				return css`
+					${Game} & {
+						padding: 2.626vw 3.396vw;
+					}
+				`;
+			}
 		}}
 	}
 `;
@@ -102,5 +117,10 @@ export const Image = styled.img<MoveStyledProps>`
 		width: min(8vw, 4.954rem);
 		height: min(8vw, 5rem);
 		object-fit: contain;
+
+		${Game} & {
+			width: min(8vw, 8rem);
+			height: min(8vw, 9rem);
+		}
 	}
 `;

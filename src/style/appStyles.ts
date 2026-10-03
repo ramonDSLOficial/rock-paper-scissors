@@ -37,9 +37,16 @@ export const Main = styled.main`
 	}
 	@media screen and (min-width: 768px) {
 		padding-bottom: 0;
-
+		
 		section {
 			margin: 0;
+		}
+	}
+	@media screen and (min-width: 1199px) {
+		justify-content: center;
+
+		section {
+			margin: auto 0;
 		}
 	}
 `;

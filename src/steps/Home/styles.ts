@@ -91,7 +91,5 @@ export const Container = styled.section`
 	}
 	@media screen and (min-width: 1199px) {
 		background-size: 68%;
-		margin-top: 25%;
 	}
-	/* mudar para contain o size da bg */
 `;

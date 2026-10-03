@@ -6,10 +6,10 @@ import PlayerField from './PlayerField';
 const Game: React.FC = () => {
   return (
     <Container>
-        <PlayerField move='scissors' player='you picked'/>
-        <PlayerField player='the house picked'/>
+        <PlayerField id='playerOne' move='scissors' player='you picked'/>
+        <PlayerField id='playerTwo' player='the house picked'/>
         
-        <ResultContainer id='result' className=''>
+        <ResultContainer id='result' className='visible'>
             <Message>you lose</Message>
             <RestartBtn>play again</RestartBtn>
         </ResultContainer>

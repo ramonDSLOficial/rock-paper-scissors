@@ -23,6 +23,6 @@ export const Container = styled.button`
         margin-bottom: 10%;
     }
     @media screen and (min-width: 1199px) {
-        font-size: .9rem;
+        font-size: .9rem;;
     }
 `;
