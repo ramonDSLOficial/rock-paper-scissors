@@ -19,7 +19,4 @@ export const Container = styled.footer`
         font-size: 1.2rem;
         letter-spacing: 0;
     }
-    @media screen and (min-width: 768px) {
-        transform: translateY(min(3vh, 3rem));
-    }
 `;
