@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.footer`
+    position: relative;
+    z-index: 3;
     color: ${props => props.theme.color.neutral.text.textT1};
     font-size: 1.35rem;
     letter-spacing: 1px;

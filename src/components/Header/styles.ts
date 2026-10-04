@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
+    position: relative;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,9 +14,6 @@ export const Container = styled.header`
 
     @media screen and (max-width: 380px) and (max-height: 650px) {
         margin-bottom: 13%;
-    }
-    @media screen and (min-width: 768px) {
-        
     }
 `;
 

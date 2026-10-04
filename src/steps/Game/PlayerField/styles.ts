@@ -15,11 +15,13 @@ export const Container = styled.div`
 
 	@media screen and (min-width: 1199px) {
 		flex-direction: column-reverse;
-		gap: min(4.5vh, 5rem);
+		gap: min(5vh, 6.2rem);
 	}
 `;
 
 export const PlayerText = styled.p`
+	position: relative;
+    z-index: 3;
 	color: ${(props) => props.theme.color.neutral.text.textT1};
 	font-size: clamp(1.068rem, 0.92rem + 0.88vw, 1.5rem);
 	font-weight: ${(props) => props.theme.fontWeight.bold};

@@ -7,13 +7,14 @@ import type { Moves } from '../../../types/types';
 interface PlayerFieldProps {
 	player: string;
 	move?: Moves;
-	id: string
+	id: string,
+	className?: string
 }
 
-const PlayerField: React.FC<PlayerFieldProps> = ({ id, player, move }) => {
+const PlayerField: React.FC<PlayerFieldProps> = ({ player, move, id, className }) => {
 	return (
 		<Container id={id}>
-			<Move move={move} />
+			<Move className={className} move={move} />
 			<PlayerText>{ player }</PlayerText>
 		</Container>
 	);
