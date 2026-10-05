@@ -15,6 +15,15 @@ export const Container = styled.header`
     @media screen and (max-width: 380px) and (max-height: 650px) {
         margin-bottom: 13%;
     }
+    @media screen and (min-width: 1600px) {
+        padding: min(1.5vw, 3.35rem);
+        width: min(85%, 52vw);
+    }
+    @media screen and (min-width: 3000px) {
+        padding: min(2.5vw, 5.35rem);
+        padding-right: min(8vw, 5.35rem);
+        padding-left: min(8vw, 6rem);
+    }
 `;
 
 export const LogoTitle = styled.h1`
@@ -29,6 +38,11 @@ export const LogoTitle = styled.h1`
     @media screen and (min-width: 768px) {
         & img {
             width: min(76%, 20rem);
+        }
+    }
+    @media screen and (min-width: 1600px) {
+        & img {
+            width: min(9.5vw, 35rem);
         }
     }
 `;
