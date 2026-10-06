@@ -21,4 +21,12 @@ export const Container = styled.footer`
         font-size: 1.2rem;
         letter-spacing: 0;
     }
+    @media screen and (min-width: 1600px) {
+        font-size: clamp(2rem, .64rem + .65vw, 3.2rem);
+        letter-spacing: 2.5px;
+        
+        & a {
+            font-size: clamp(2.4rem, .92rem + .85vw, 4rem);
+        }
+    }
 `;
