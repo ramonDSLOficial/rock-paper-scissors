@@ -25,4 +25,8 @@ export const Container = styled.button`
     @media screen and (min-width: 1199px) {
         font-size: .9rem;;
     }
+    @media screen and (min-width: 1600px) {
+        font-size: clamp(1.5rem, .65rem + .79vw, 3.5rem);
+        padding: min(4.5%, 2.5rem) min(11%, calc(2.5rem * 2.5));
+    }
 `;
