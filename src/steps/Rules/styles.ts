@@ -26,9 +26,9 @@ export const Container = styled.dialog`
 	@media screen and (min-width: 768px) {
 		max-width: 450px;
 		max-height: 450px;
-		/* //NOTE por o top com 50% e o y -50% para alinhar depois */
+		top: 50%;
 		left: 50%;
-		transform: translate(-50%, 38.66%);
+		transform: translate(-50%, -50%);
 
 		&::backdrop {
 			background-color: rgba(0, 0, 0, 0.5);
@@ -43,6 +43,10 @@ export const Container = styled.dialog`
 			border-radius: 15px;
 			padding: 15px 10px;
 		}
+	}
+	@media screen and (min-width: 1199px) {
+		top: 50%;
+		transform: translate(-50%, -50%);
 	}
 	@media screen and (min-width: 1600px) {
 		max-width: 35vw;
