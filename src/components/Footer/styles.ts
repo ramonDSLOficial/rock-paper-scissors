@@ -21,6 +21,19 @@ export const Container = styled.footer`
         font-size: 1.2rem;
         letter-spacing: 0;
     }
+    @media screen and (min-width: 1199px) {
+
+        & a {
+            transition: filter .5s ease-in-out;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                text-shadow: 1px 1px 1px #000;
+                filter: brightness(135%);
+            }
+        }
+    }
     @media screen and (min-width: 1600px) {
         font-size: clamp(2rem, .64rem + .65vw, 3.2rem);
         letter-spacing: 2.5px;
