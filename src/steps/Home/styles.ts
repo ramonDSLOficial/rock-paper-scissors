@@ -3,18 +3,16 @@ import { Container as Move } from '../../components/Move/styles';
 
 export const Container = styled.section`
 	flex: 0.55;
-	position: relative;
 	display: grid;
 	grid-template-areas:
 		'paper scissors'
 		'rock rock';
 	background: url('./images/bg-triangle.svg') center no-repeat;
+	align-items: center;
 	background-size: 100%;
 	width: min(68%, 38rem);
 
 	& ${Move} {
-		position: absolute;
-
 		&#rock {
 			grid-area: rock;
 			transform: translateY(max(-13.23%, -2rem));
@@ -74,6 +72,17 @@ export const Container = styled.section`
 				transform: translate(max(-4.5%, -2.5rem), max(-22%, -3.5rem));
 			}
 		}
+		@media screen and (min-width: 1609px) {
+			&#rock {
+				transform: translateY(-17.66%);
+			}
+			&#paper {
+				transform: translate(-23.5%, -40%);
+			}
+			&#scissors {
+				transform: translate(23.5%, -40%);
+			}
+		}
 	}
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
@@ -91,5 +100,10 @@ export const Container = styled.section`
 	}
 	@media screen and (min-width: 1199px) {
 		background-size: 68%;
+	}
+	@media screen and (min-width: 1600px) {
+		width: min(25%, 25vw);
+		max-height: 18vw;
+		background-size: cover;
 	}
 `;
