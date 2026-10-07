@@ -26,6 +26,7 @@ export const Container = styled.dialog`
 	@media screen and (min-width: 768px) {
 		max-width: 450px;
 		max-height: 450px;
+		/* //NOTE por o top com 50% e o y -50% para alinhar depois */
 		left: 50%;
 		transform: translate(-50%, 38.66%);
 
@@ -43,6 +44,12 @@ export const Container = styled.dialog`
 			padding: 15px 10px;
 		}
 	}
+	@media screen and (min-width: 1600px) {
+		max-width: 35vw;
+		max-height: 35vw;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
 `;
 
 export const Title = styled.h3`
@@ -55,6 +62,9 @@ export const Title = styled.h3`
 		grid-area: title;
 		justify-self: flex-start;
 		padding-left: 12%;
+	}
+	@media screen and (min-width: 1600px) {
+		font-size: clamp(5.5rem, 1.23rem + 2.485vw, 12.5rem);
 	}
 `;
 
@@ -83,6 +93,26 @@ export const CloseBtn = styled.button`
 
 		& img {
 			pointer-events: none;
+		}
+	}
+	@media screen and (min-width: 1199px) {
+		& img {
+			transition: filter .5s ease-in-out;
+		}
+	
+		&:focus-within {
+			outline: none;
+	
+			& img {
+				filter: drop-shadow(1px 1px 2px #000);
+			}
+		}
+	}
+	@media screen and (min-width: 1600px) {
+		width: 20%;
+
+		& img {
+			width: 100%;
 		}
 	}
 `;
