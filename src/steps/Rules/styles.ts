@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// FIXME aumentar a largura para wide screens
+
 export const Container = styled.dialog`
 	position: absolute;
 	top: 0;
