@@ -30,12 +30,12 @@ export const Container = styled.section`
 export const ResultContainer = styled.div`
 	position: relative;
     z-index: 3;
+	grid-area: result;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	row-gap: 2rem;
 	text-align: center;
-	grid-area: result;
 	width: 0px;
 	overflow: hidden;
 	transform: scale(0);
@@ -54,6 +54,10 @@ export const Message = styled.h2`
 	font-size: clamp(3.8rem, 2.12rem + 8.26vw, 4.2rem);
 	font-weight: ${(props) => props.theme.fontWeight.bold};
 	letter-spacing: 2px;
+
+	@media screen and (min-width: 1600px) {
+		font-size: clamp(5rem, 1.12rem + 2.26vw, 10.2rem);
+	}
 `;
 
 export const RestartBtn = styled.button`
@@ -64,10 +68,17 @@ export const RestartBtn = styled.button`
 	padding: min(5%, 2rem) min(18.8%, 7.5rem);
 	background-color: ${(props) => props.theme.color.neutral.badge.bgColorT1};
 	border: none;
-	border-radius: 5px;
+	border-radius: 10px;
 
 	@media screen and (min-width: 1199px) {
 		padding: min(8%, 3.5rem) min(22%, 8.5rem);
 		white-space: nowrap;
+	}
+	@media screen and (min-width: 1600px) {
+		font-size: clamp(1.8rem, 0.88rem + .55vw, 2.8rem);
+		padding: min(9%, 4.2rem) min(23%, 16rem);
+	}
+	@media screen and (min-width: 2000px) {
+		width: 105%;		
 	}
 `;

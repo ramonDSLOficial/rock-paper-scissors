@@ -30,4 +30,8 @@ export const PlayerText = styled.p`
 	@media screen and (min-width: 1199px) {
 		letter-spacing: 2.5px;
 	}
+	@media screen and (min-width: 1600px) {
+		letter-spacing: .088vw;
+		font-size: clamp(2.068rem, 0.92rem + 0.88vw, 3.8rem);
+	}
 `;
