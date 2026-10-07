@@ -8,7 +8,7 @@ interface MoveStyledProps {
 
 const boxShadow = 'inset 0 6.32px 0 #babed2b2';
 const winnerShadowLength = '4.2vw';
-const winnerShadow = `0 0 0 ${winnerShadowLength} #56546917, 0 0 0 calc(${winnerShadowLength} * 2) #3b43636b, 0 0 0 calc(${winnerShadowLength} * 3) #1f375659`;
+const winnerShadow = `0 0 0 ${winnerShadowLength} #56546943, 0 0 0 calc(${winnerShadowLength} * 2) #3b43633a, 0 0 0 calc(${winnerShadowLength} * 3) #1f375645`;
 /*
 // NOTE quando começar a mexer na parte JS, pegar o aparelho (largura e altura) para criar uma const com os box-shadow só fazendo uma alteração básica, para evitar ter que continuar repetindo toda essa linha de códgo
 // protótipo
@@ -99,6 +99,31 @@ export const Container = styled.button<MoveStyledProps>`
 			}
 		}}
 	}
+	@media screen and (min-width: 1600px) {
+		border-width: 1vw;
+
+		${Game} & {
+			border-width: 1.35vw;
+		}
+
+		${({ $move }) => {
+			if ($move)
+				return css`
+					padding: 2.385vw;
+
+					${Game} & {
+						padding: 2.556vw 2.765vw;
+					}
+				`;
+			else {
+				return css`
+					${Game} & {
+						padding: 1.226vw 1.426vw;
+					}
+				`;
+			}
+		}}
+	}
 `;
 
 export const Image = styled.img<MoveStyledProps>`
@@ -128,6 +153,15 @@ export const Image = styled.img<MoveStyledProps>`
 		${Game} & {
 			width: min(8vw, 8rem);
 			height: min(8vw, 9rem);
+		}
+	}
+	@media screen and (min-width: 1600px) {
+		width: 3.5vw;
+		height: 3.5vw;
+
+		${Game} & {
+			width: 5.83vw;
+			height: 5.83vw;
 		}
 	}
 `;
