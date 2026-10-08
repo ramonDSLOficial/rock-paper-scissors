@@ -73,7 +73,7 @@ export const Container = styled.section`
 				transform: translate(min(4.5%, 3.8rem), max(-22%, -3.5rem));
 			}
 		}
-		@media screen and (min-width: 1609px) {
+		@media screen and (min-width: 1600px) {
 			&#rock {
 				transform: translateY(-17.66%);
 			}
