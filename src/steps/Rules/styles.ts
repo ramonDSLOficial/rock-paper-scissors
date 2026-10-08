@@ -103,8 +103,13 @@ export const CloseBtn = styled.button`
 		& img {
 			transition: filter .5s ease-in-out;
 		}
+
+		&:hover {
+			cursor: pointer;
+		}
 	
-		&:focus-within {
+		&:focus-within,
+		&:hover {
 			outline: none;
 	
 			& img {
