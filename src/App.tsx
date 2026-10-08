@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Container, Main } from './style/appStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -8,16 +8,18 @@ import Rules from './steps/Rules';
 import Game from './steps/Game';
 
 const App: React.FC = () => {
+	const modalRulesRef = useRef<HTMLDialogElement | null>(null)
+
 	return (
 		<Container>
 			<Header />
 
 			<Main>
-				{/* <Home /> */}
-				<Game />
+				<Home />
+				{/* <Game /> */}
 
-				<ModalRulesBtn />
-				<Rules />
+				<ModalRulesBtn modalRulesRef={modalRulesRef}/>
+				<Rules modalRulesRef={modalRulesRef}/>
 			</Main>
 
 			<Footer />

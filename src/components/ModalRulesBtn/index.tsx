@@ -2,8 +2,14 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const ModalRulesBtn: React.FC = () => {
-	return <Container>rules</Container>;
+interface ModalRulesBtnProps {
+	modalRulesRef: React.RefObject<HTMLDialogElement>
+}
+
+const ModalRulesBtn: React.FC<ModalRulesBtnProps> = ({ modalRulesRef }) => {
+	const openRulesModal = (): void => modalRulesRef.current.showModal()
+
+	return <Container onClick={openRulesModal}>rules</Container>;
 };
 
 export default ModalRulesBtn;

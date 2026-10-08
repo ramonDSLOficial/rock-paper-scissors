@@ -2,9 +2,15 @@ import React from 'react';
 
 import { CloseBtn, Container, RulesImage, Title } from './styles';
 
-const Rules: React.FC = () => {
+interface RulesProps {
+	modalRulesRef: React.RefObject<HTMLDialogElement>
+}
+
+const Rules: React.FC<RulesProps> = ({ modalRulesRef }) => {
+	const closeModalRules = (): void => modalRulesRef.current.close()
+	
 	return (
-		<Container>
+		<Container ref={modalRulesRef}>
 			<Title>rules</Title>
 
 			<RulesImage
@@ -12,7 +18,7 @@ const Rules: React.FC = () => {
 				alt="rules: scissors beats paper. paper beats rock. rock beats scissors."
 			/>
 
-			<CloseBtn title='close rules'>
+			<CloseBtn title='close rules' onClick={closeModalRules}>
 				<img src="./images/icon-close.svg" alt="" />
 			</CloseBtn>
 		</Container>
