@@ -73,6 +73,20 @@ export const RestartBtn = styled.button`
 	@media screen and (min-width: 1199px) {
 		padding: min(8%, 3.5rem) min(22%, 8.5rem);
 		white-space: nowrap;
+		border: 1px solid transparent;
+		transition: color .5s ease-in-out, border-color .5s ease-in-out, background-color .5s ease-in-out;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		&:hover,
+		&:focus {
+			color: ${props => props.theme.color.neutral.text.textT1};
+			border-color: ${props => props.theme.color.neutral.badge.bgColorT1};
+			background-color: transparent;
+			outline: none;
+		}
 	}
 	@media screen and (min-width: 1600px) {
 		font-size: clamp(1.8rem, 0.88rem + .55vw, 2.8rem);
