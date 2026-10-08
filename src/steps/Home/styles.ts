@@ -64,12 +64,13 @@ export const Container = styled.section`
 			&#paper,
 			&#scissors {
 				align-self: flex-end;
+				justify-self: center;
 			}
 			&#paper {
-				transform: translate(min(4.5%, 2.5rem), max(-22%, -3.5rem));
+				transform: translate(max(-4.5%, -3.8rem), max(-22%, -3.5rem));
 			}
 			&#scissors {
-				transform: translate(max(-4.5%, -2.5rem), max(-22%, -3.5rem));
+				transform: translate(min(4.5%, 3.8rem), max(-22%, -3.5rem));
 			}
 		}
 		@media screen and (min-width: 1609px) {
