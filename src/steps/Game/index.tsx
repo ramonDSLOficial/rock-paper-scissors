@@ -6,7 +6,7 @@ import PlayerField from './PlayerField';
 const Game: React.FC = () => {
   return (
     <Container>
-        <PlayerField className='winner' id='playerOne' move='scissors' player='you picked'/>
+        <PlayerField id='playerOne' move='scissors' player='you picked'/>
         <PlayerField id='playerTwo' player='the house picked'/>
         
         <ResultContainer id='result' className=''>

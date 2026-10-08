@@ -24,7 +24,7 @@ export const Container = styled.button<MoveStyledProps>`
 	border: min(3.33vw, 2rem) solid transparent;
 	border-radius: 50%;
 	line-height: 0;
-	transition: all 0.5s ease-in-out;
+	transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, padding 0.5s ease-in-out, filter 0.5s ease-in-out;
 
 	${({ $move, theme: { color } }) => {
 		if ($move)
@@ -37,8 +37,7 @@ export const Container = styled.button<MoveStyledProps>`
 					${boxShadow};
 					
 				${Game} &.winner {
-					box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']},
-						${winnerShadow}, ${boxShadow};
+					box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']}, ${boxShadow}, ${winnerShadow};
 				}
 			`;
 		else
@@ -89,11 +88,24 @@ export const Container = styled.button<MoveStyledProps>`
 					${Game} & {
 						padding: 3.456vw 4.265vw;
 					}
+
+					&:hover {
+						cursor: pointer;
+					}
+					&:hover,
+					&:focus {
+						filter: saturate(1.5) drop-shadow(0 0 3px #000);
+						outline: none;
+					}
 				`;
 			else {
 				return css`
 					${Game} & {
 						padding: 2.626vw 3.396vw;
+
+						&:focus {
+							outline: 1px solid cadetblue
+						}
 					}
 				`;
 			}
