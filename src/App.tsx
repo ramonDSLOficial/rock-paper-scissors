@@ -6,20 +6,21 @@ import Home from './steps/Home';
 import ModalRulesBtn from './components/ModalRulesBtn';
 import Rules from './steps/Rules';
 import Game from './steps/Game';
+import { useGameStore } from './store/gameStore';
 
 const App: React.FC = () => {
-	const modalRulesRef = useRef<HTMLDialogElement | null>(null)
+	const modalRulesRef = useRef<HTMLDialogElement | null>(null);
+	const { hasGameHapping } = useGameStore();
 
 	return (
 		<Container>
 			<Header />
 
 			<Main>
-				<Home />
-				{/* <Game /> */}
+				{!hasGameHapping ? <Home /> : <Game />}
 
-				<ModalRulesBtn modalRulesRef={modalRulesRef}/>
-				<Rules modalRulesRef={modalRulesRef}/>
+				<ModalRulesBtn modalRulesRef={modalRulesRef} />
+				<Rules modalRulesRef={modalRulesRef} />
 			</Main>
 
 			<Footer />

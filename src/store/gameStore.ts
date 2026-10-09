@@ -11,10 +11,14 @@ type GameStore = {
     score: number,
     hasGameHapping: boolean,
     gameState: GameState
+    setFirstPlayerMove: (move: Moves) => void
+    startGame: () => void
 }
 
-export const useGameStore = create<GameStore>(() => ({
+export const useGameStore = create<GameStore>((set) => ({
     score: 0,
     hasGameHapping: false,
-    gameState: {}
+    gameState: {},
+    setFirstPlayerMove: (move) => set(() => ({ gameState: { firstPlayer: move } })),
+    startGame: () => set(() => ({ hasGameHapping: true }))
 }))
