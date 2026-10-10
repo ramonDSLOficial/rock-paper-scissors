@@ -14,6 +14,8 @@ type GameStore = {
 	setFirstPlayerMove: (move: Moves) => void;
 	setSecondPlayerMove: (move: Moves) => void;
 	startGame: () => void;
+    setGameResult: (result: Result) => void;
+    changeScoreValue: (operation: number) => void;
 };
 
 export const useGameStore = create<GameStore>((set) => ({
@@ -24,4 +26,9 @@ export const useGameStore = create<GameStore>((set) => ({
 	setSecondPlayerMove: (move) =>
 		set((state) => ({ gameState: { ...state.gameState, secondPlayer: move } })),
 	startGame: () => set(() => ({ hasGameHapping: true })),
+    setGameResult: (result) => set((state) => ({ gameState: { ...state.gameState, result: result }})),
+    changeScoreValue: (operation) => set((state) => {
+		const newScore = state.score +  operation
+		return { score: newScore >= 0 ? newScore : 0 }
+	})
 }));
