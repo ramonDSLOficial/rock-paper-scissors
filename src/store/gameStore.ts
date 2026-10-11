@@ -1,10 +1,9 @@
 import { create } from 'zustand';
-import type { Moves, Result } from '../types/types';
+import type { Moves } from '../types/types';
 
 type GameState = {
 	firstPlayer?: Moves;
 	secondPlayer?: Moves;
-	result?: Result;
 };
 
 type GameStore = {
@@ -15,7 +14,6 @@ type GameStore = {
 	setSecondPlayerMove: (move: Moves) => void;
 	startGame: () => void;
 	restartGame: () => void;
-    setGameResult: (result: Result) => void;
     changeScoreValue: (operation: number) => void;
 };
 
@@ -35,9 +33,8 @@ export const useGameStore = create<GameStore>((set) => ({
 		},
 		hasGameHapping: false
 	})),
-    setGameResult: (result) => set((state) => ({ gameState: { ...state.gameState, result: result }})),
     changeScoreValue: (operation) => set((state) => {
-		const newScore = state.score +  operation
+		const newScore = state.score + operation
 		return { score: newScore >= 0 ? newScore : 0 }
 	})
 }));

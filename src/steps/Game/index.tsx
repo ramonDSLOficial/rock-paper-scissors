@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Container, ResultContainer, Message, RestartBtn } from './styles';
 import PlayerField from './PlayerField';
@@ -13,9 +13,8 @@ type Rules = {
 }
 
 const Game: React.FC = () => {
-	// NOTE está exibindo o resultado antes de trocar o valor do result
-	// BUG ficar de olho na atualização do placar
-	const { gameState, setSecondPlayerMove, setGameResult, changeScoreValue, restartGame } = useGameStore();
+	const { gameState, setSecondPlayerMove, changeScoreValue, restartGame } = useGameStore();
+	const [result, setResult] = useState<Result | null>(null)
 
 	const rules: Rules = {
 		'rock': 'scissors',
@@ -44,21 +43,25 @@ const Game: React.FC = () => {
 		else proclaimResult('draw')
 	}
 
-	const proclaimResult = (result: Result): void => {
-		setGameResult(result);
+	const proclaimResult = async (result: Result): Promise<void> => {
+		setResult(result)
+		await sleep(1)
 
 		const operation = result === 'win' ? 1 : result === 'lose' ? -1 : 0
 		changeScoreValue(operation)
 	}
 
 	useEffect(() => {
-		if (!gameState.secondPlayer) raffleSecondPlayerMove()
+		if (!gameState.secondPlayer) {
+			raffleSecondPlayerMove()
+			return 
+		}
 
 		checkResult()
 	}, [gameState.secondPlayer]);
 
 	return (
-		<Container className={gameState.result ? `showResult` : undefined}>
+		<Container className={result ? `showResult` : undefined}>
 			<PlayerField
 				id="playerOne"
 				move={gameState.firstPlayer}
@@ -71,7 +74,7 @@ const Game: React.FC = () => {
 			/>
 
 			<ResultContainer id="result">
-				<Message>you {gameState.result}</Message>
+				<Message>you {result}</Message>
 				<RestartBtn onClick={restartGame}>play again</RestartBtn>
 			</ResultContainer>
 		</Container>
