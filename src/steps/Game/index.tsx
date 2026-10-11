@@ -13,7 +13,9 @@ type Rules = {
 }
 
 const Game: React.FC = () => {
-	const { gameState, setSecondPlayerMove, setGameResult, changeScoreValue } = useGameStore();
+	// NOTE está exibindo o resultado antes de trocar o valor do result
+	// BUG ficar de olho na atualização do placar
+	const { gameState, setSecondPlayerMove, setGameResult, changeScoreValue, restartGame } = useGameStore();
 
 	const rules: Rules = {
 		'rock': 'scissors',
@@ -56,7 +58,7 @@ const Game: React.FC = () => {
 	}, [gameState.secondPlayer]);
 
 	return (
-		<Container className={gameState.result ? `showResult` : ''}>
+		<Container className={gameState.result ? `showResult` : undefined}>
 			<PlayerField
 				id="playerOne"
 				move={gameState.firstPlayer}
@@ -70,7 +72,7 @@ const Game: React.FC = () => {
 
 			<ResultContainer id="result">
 				<Message>you {gameState.result}</Message>
-				<RestartBtn>play again</RestartBtn>
+				<RestartBtn onClick={restartGame}>play again</RestartBtn>
 			</ResultContainer>
 		</Container>
 	);

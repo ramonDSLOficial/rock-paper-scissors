@@ -46,7 +46,7 @@ export const ResultContainer = styled.div`
 		transform: scale(1) rotate(360deg);
 	}
 `;
-
+// NOTE o texto está sendo cortado 
 export const Message = styled.h2`
 	color: ${(props) => props.theme.color.neutral.text.textT1};
 	font-size: clamp(3.8rem, 2.12rem + 8.26vw, 4.6rem);
