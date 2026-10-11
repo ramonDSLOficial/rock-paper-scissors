@@ -61,7 +61,7 @@ export const Message = styled.h2`
 
 export const RestartBtn = styled.button`
 	color: ${(props) => props.theme.color.neutral.text.textT0};
-	font-size: clamp(1.3rem, 0.88rem + 1.6vw, 1.4rem);
+	font-size: clamp(1.3rem, 0.88rem + 1.6vw, 1.35rem);
 	font-weight: ${(props) => props.theme.fontWeight.bold};
 	letter-spacing: 2px;
 	padding: min(5%, 2rem) min(18.8%, 7.5rem);
@@ -70,10 +70,10 @@ export const RestartBtn = styled.button`
 	border-radius: 7px;
 
 	@media screen and (min-width: 1199px) {
-		padding: min(8%, 3.5rem) min(22%, 8.5rem);
+		padding: min(7%, 3.2rem) min(22%, 8.5rem);
 		white-space: nowrap;
 		border: 1px solid transparent;
-		transition: color .5s ease-in-out, border-color .5s ease-in-out, background-color .5s ease-in-out;
+		transition: color .5s ease-in-out;
 
 		&:hover {
 			cursor: pointer;
@@ -81,9 +81,7 @@ export const RestartBtn = styled.button`
 
 		&:hover,
 		&:focus {
-			color: ${props => props.theme.color.neutral.text.textT1};
-			border-color: ${props => props.theme.color.neutral.badge.bgColorT1};
-			background-color: transparent;
+			color: #dc2e4eff;
 			outline: none;
 		}
 	}
