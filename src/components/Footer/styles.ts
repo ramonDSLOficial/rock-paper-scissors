@@ -21,9 +21,10 @@ export const Container = styled.footer`
         font-size: 1.2rem;
         letter-spacing: 0;
     }
-    @media screen and (min-width: 1199px) {
+    @media screen and (min-width: 768px) {
         margin: 1% 0;
-
+    }
+    @media screen and (min-width: 1199px) {
         & a {
             transition: filter .5s ease-in-out;
 
