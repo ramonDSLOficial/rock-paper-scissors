@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import type { Moves } from '../../types/types';
 import { Container as Game } from '../../steps/Game/styles';
-import { Container as Home } from '../../steps/Home/styles'
+import { Container as Home } from '../../steps/Home/styles';
 
 interface MoveStyledProps {
 	$move?: Moves;
@@ -25,7 +25,9 @@ export const Container = styled.button<MoveStyledProps>`
 	border: min(3.33vw, 2rem) solid transparent;
 	border-radius: 50%;
 	line-height: 0;
-	transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out, padding 0.5s ease-in-out, filter 0.5s ease-in-out;
+	transition: border-color 0.5s ease-in-out, background-color 0.5s ease-in-out,
+		box-shadow 0.5s ease-in-out, padding 0.5s ease-in-out,
+		filter 0.5s ease-in-out;
 
 	${({ $move, theme: { color } }) => {
 		if ($move)
@@ -36,9 +38,10 @@ export const Container = styled.button<MoveStyledProps>`
 				border-color: ${color.moves[$move + 'Accent']};
 				box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']},
 					${boxShadow};
-					
+
 				${Game} &.winner {
-					box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']}, ${boxShadow}, ${winnerShadow};
+					box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']},
+						${boxShadow}, ${winnerShadow};
 				}
 			`;
 		else
@@ -52,7 +55,7 @@ export const Container = styled.button<MoveStyledProps>`
 	}}
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
-		padding: 7.237vw;
+		padding: 6.137vw;
 		border-width: 8.568px;
 
 		${({ $move, theme: { color } }) =>
@@ -95,7 +98,7 @@ export const Container = styled.button<MoveStyledProps>`
 					}
 					&:hover,
 					&:focus {
-						filter: saturate(.75) drop-shadow(0 0 3px #000);
+						filter: saturate(0.75) drop-shadow(0 0 3px #000);
 						outline: none;
 					}
 				`;
@@ -105,7 +108,7 @@ export const Container = styled.button<MoveStyledProps>`
 						padding: 2.626vw 3.396vw;
 
 						&:focus {
-							outline: 1px solid cadetblue
+							outline: 1px solid cadetblue;
 						}
 					}
 				`;
@@ -157,8 +160,8 @@ export const Image = styled.img<MoveStyledProps>`
 	transition: all 0.5s ease-in-out;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
-		width: 5.2rem;
-		height: 5rem;
+		width: 3.2rem;
+		height: 3rem;
 	}
 	@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
 		width: 3.8rem;
@@ -186,8 +189,5 @@ export const Image = styled.img<MoveStyledProps>`
 			width: 5.83vw;
 			height: 5.83vw;
 		}
-	}
-	@media screen and (min-width: 3000px) and (max-height: 1500px) {
-		
 	}
 `;

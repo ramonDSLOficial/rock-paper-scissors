@@ -96,8 +96,8 @@ export const Container = styled.section`
 	}
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
-		background-size: 100%;
-		flex: 1;
+		background-size: 80%;
+		flex: .65;
 	}
 	@media screen and (min-width: 768px) {
 		flex: 0.9;

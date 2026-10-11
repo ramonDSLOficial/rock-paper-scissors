@@ -17,7 +17,7 @@ export const Container = styled.div`
 		padding-bottom: 0;
 	}
 `;
-
+// FIXME retirar daqui a atribuição de margem para os sections
 export const Main = styled.main`
 	display: flex;
 	flex-direction: column;
