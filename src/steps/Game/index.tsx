@@ -56,7 +56,7 @@ const Game: React.FC = () => {
 	}, [gameState.secondPlayer]);
 
 	return (
-		<Container>
+		<Container className={gameState.result ? `showResult` : ''}>
 			<PlayerField
 				id="playerOne"
 				move={gameState.firstPlayer}
@@ -68,7 +68,7 @@ const Game: React.FC = () => {
 				player="the house picked"
 			/>
 
-			<ResultContainer id="result" className={gameState.result ? `visible` : ''}>
+			<ResultContainer id="result">
 				<Message>you {gameState.result}</Message>
 				<RestartBtn>play again</RestartBtn>
 			</ResultContainer>

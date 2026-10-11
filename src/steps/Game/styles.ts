@@ -16,13 +16,15 @@ export const Container = styled.section`
 	}
 
 	@media screen and (min-width: 1199px) {
-		display: flex;
-		justify-content: center;
+		grid-template-columns: 1fr 0fr 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas:
+			'playerOne result playerTwo';	
+		transition: grid-template-columns 1.45s ease-in-out;
 		align-items: center;
-		gap: 5vw;
-		
-		& > div#playerTwo {
-			order: 2;
+
+		&.showResult {
+			grid-template-columns: 1fr .6fr 1fr;
 		}
 	}
 `;
@@ -36,27 +38,24 @@ export const ResultContainer = styled.div`
 	align-items: center;
 	row-gap: 2rem;
 	text-align: center;
-	width: 0px;
 	overflow: hidden;
 	transform: scale(0);
-	transition: transform 0.5s ease-in-out, width 0.5s ease-in-out,
-		overflow 0.5s ease-in-out;
+	transition: transform 2s ease-in-out, overflow 0.5s ease-in-out;
 
-	&.visible {
+	${Container}.showResult & {
 		transform: scale(1) rotate(360deg);
-		width: initial;
-		overflow: visible;
 	}
 `;
 
 export const Message = styled.h2`
 	color: ${(props) => props.theme.color.neutral.text.textT1};
-	font-size: clamp(3.8rem, 2.12rem + 8.26vw, 4.2rem);
+	font-size: clamp(3.8rem, 2.12rem + 8.26vw, 4.6rem);
 	font-weight: ${(props) => props.theme.fontWeight.bold};
 	letter-spacing: 2px;
+	white-space: nowrap;
 
 	@media screen and (min-width: 1600px) {
-		font-size: clamp(5rem, 1.12rem + 2.26vw, 10.2rem);
+		font-size: clamp(5rem, 1.15rem + 2.36vw, 10.2rem);
 	}
 `;
 
@@ -68,7 +67,7 @@ export const RestartBtn = styled.button`
 	padding: min(5%, 2rem) min(18.8%, 7.5rem);
 	background-color: ${(props) => props.theme.color.neutral.badge.bgColorT1};
 	border: none;
-	border-radius: 10px;
+	border-radius: 7px;
 
 	@media screen and (min-width: 1199px) {
 		padding: min(8%, 3.5rem) min(22%, 8.5rem);
