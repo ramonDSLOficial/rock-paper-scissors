@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Container as CloseModalBtn } from '../CloseModalBtn/styles'
 
 export const Container = styled.dialog`
 	position: absolute;
@@ -6,31 +7,58 @@ export const Container = styled.dialog`
     transform: translateY(-60%);
 	margin: 0 auto;
 	width: 90%;
-	max-width: 100%;
 	height: 50%;
+	max-width: 100%;
 	max-height: 100%; 
 	
     &[open] {
-		display: grid;
-		grid-template-columns: 1fr;
-		grid-auto-rows: 0.7fr;
-		justify-items: center;
+		display: flex;
+		flex-direction: column;
 		align-items: center;
+		justify-content: space-around;
 		border: 10px solid #141639ff;
 	}
 
 	& > h2 {
-		font-size: 2rem;
+		font-size: clamp(2rem, .78rem + 1.67vw, 3.8rem);
 		letter-spacing: 1.54px;
+	}
+
+	@media screen and (min-width: 768px) {
+		max-width: 500px;
+		max-height: 500px;
+		transform: translateY(-45%);
+
+		&[open] {
+			outline: 3px solid ${props => props.theme.color.neutral.badge.bgColorT1};
+		}
+
+		&::backdrop {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		& ${CloseModalBtn} {
+			padding-right: 0;
+		}
+	}
+	@media screen and (min-width: 1600px) {
+		& ${CloseModalBtn} {
+			width: min(20%, 30px);
+		}
 	}
 `;
 
 export const Fieldset = styled.fieldset`
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 15px;
     width: 80%;
     border: 10px solid #141639ff;
 	background-color: #565469ff;
-	padding: 3vh min(4vw, 30px);
+	padding: min(3vh, 20px) min(4vw, 30px);
+	
+	@media screen and (min-width: 768px) {
+		padding: min(6.33vh, 55px) min(4vw, 30px);
+		width: 50%;
+	}
 `;

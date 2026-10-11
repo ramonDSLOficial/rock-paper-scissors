@@ -12,7 +12,7 @@ const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
 	const closeModalConfigs = (): void => modalConfigsRef.current.close();
 
 	return (
-		<Container open ref={modalConfigsRef}>
+		<Container ref={modalConfigsRef}>
 			<h2>Game Configurations</h2>
 
 			<Fieldset>
