@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Fieldset } from './styles';
 import Option from './Option';
 import CloseModalBtn from '../CloseModalBtn';
 
@@ -12,15 +12,15 @@ const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
 	const closeModalConfigs = (): void => modalConfigsRef.current.close();
 
 	return (
-		<Container ref={modalConfigsRef}>
+		<Container open ref={modalConfigsRef}>
 			<h2>Game Configurations</h2>
 
-      <fieldset>
-        <Option label='extra moves' />
-        <Option label='pvp' />
-      </fieldset>
+			<Fieldset>
+				<Option label="extra moves" />
+				<Option label="pvp" />
+			</Fieldset>
 
-			<CloseModalBtn title='close configs' onClick={closeModalConfigs} />
+			<CloseModalBtn title="close configs" onClick={closeModalConfigs} />
 		</Container>
 	);
 };
