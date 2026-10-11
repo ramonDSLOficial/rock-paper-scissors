@@ -12,7 +12,7 @@ const Move: React.FC<MoveProps> = ({ move, ...props }) => {
 		<Container $move={move} {...props}>
 			<Image
 				$move={move}
-				src={move ? `./images/icon-${move}.svg` : ''}
+				src={move ? `./images/icon-${move}.svg` : null}
 				alt={move ? `throw ${move}` : ''}
 			/>
 		</Container>
