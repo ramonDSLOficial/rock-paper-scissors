@@ -117,4 +117,9 @@ export const Container = styled.section`
 		max-height: 18vw;
 		background-size: cover;
 	}
+	@media screen and (min-width: 3000px) and (max-height: 1500px) {
+		width: min(25%, 22vw);
+		max-height: 15vw;
+		background-size: contain;
+	}
 `;

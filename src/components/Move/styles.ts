@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import type { Moves } from '../../types/types';
 import { Container as Game } from '../../steps/Game/styles';
+import { Container as Home } from '../../steps/Home/styles'
 
 interface MoveStyledProps {
 	$move?: Moves;
@@ -136,6 +137,16 @@ export const Container = styled.button<MoveStyledProps>`
 			}
 		}}
 	}
+	@media screen and (min-width: 3000px) and (max-height: 1500px) {
+		${({ $move }) => {
+			if ($move)
+				return css`
+					${Home} & {
+						padding: 2.085vw;
+					}
+				`;
+		}}
+	}
 `;
 
 export const Image = styled.img<MoveStyledProps>`
@@ -175,5 +186,8 @@ export const Image = styled.img<MoveStyledProps>`
 			width: 5.83vw;
 			height: 5.83vw;
 		}
+	}
+	@media screen and (min-width: 3000px) and (max-height: 1500px) {
+		
 	}
 `;
