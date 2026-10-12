@@ -14,6 +14,7 @@ export const Container = styled.div`
 	@media screen and (min-width: 1199px) {
 		justify-content: space-evenly;
 		overflow: hidden;
+		padding-bottom: 0;
 	}
 `;
 
