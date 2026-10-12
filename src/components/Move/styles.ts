@@ -79,7 +79,7 @@ export const Container = styled.button<MoveStyledProps>`
 		${Game} & {
 			border-width: min(3.33vw, 2.2rem);
 		}
-		/* // FIXME trocar o efeito de destaque para escurecer, o brilho ta machucando meus olhos */
+
 		${({ $move }) => {
 			if ($move)
 				return css`
@@ -94,7 +94,7 @@ export const Container = styled.button<MoveStyledProps>`
 					}
 					&:hover,
 					&:focus {
-						filter: saturate(1.5) drop-shadow(0 0 3px #000);
+						filter: saturate(.75) drop-shadow(0 0 3px #000);
 						outline: none;
 					}
 				`;
