@@ -110,6 +110,7 @@ export const Container = styled.section`
 	}
 	@media screen and (min-width: 1199px) {
 		background-size: 68%;
+		justify-content: initial;
 	}
 	@media screen and (min-width: 1600px) {
 		width: min(25%, 25vw);
