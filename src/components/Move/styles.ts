@@ -51,7 +51,7 @@ export const Container = styled.button<MoveStyledProps>`
 	}}
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
-		padding: 5.237vw;
+		padding: 7.237vw;
 		border-width: 8.568px;
 
 		${({ $move, theme: { color } }) =>
@@ -146,8 +146,8 @@ export const Image = styled.img<MoveStyledProps>`
 	transition: all 0.5s ease-in-out;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
-		width: 3.2rem;
-		height: 3rem;
+		width: 5.2rem;
+		height: 5rem;
 	}
 	@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
 		width: 3.8rem;

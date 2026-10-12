@@ -10,12 +10,13 @@ export const Container = styled.section`
 	background: url('./images/bg-triangle.svg') center no-repeat;
 	align-items: center;
 	background-size: 100%;
-	width: min(68%, 38rem);
+	width: min(82%, 38rem);
 
 	& ${Move} {
 		&#rock {
 			grid-area: rock;
-			transform: translateY(max(-13.23%, -2rem));
+			transform: translateY(max(-8.23%, -.8rem));
+			align-self: start;
 			justify-self: center;
 		}
 		&#paper {
@@ -24,19 +25,19 @@ export const Container = styled.section`
 		}
 		&#scissors {
 			grid-area: scissors;
-			justify-self: flex-end;
 			transform: translate(min(27%, 6rem), max(-7.88%, -1.8rem));
 		}
 
 		@media screen and (max-width: 680px) and (max-height: 650px) {
-			&#rock {
-				transform: translateY(max(-15.23%, -2rem));
+			&#paper,
+			&#scissors {
+				justify-self: center;
 			}
 			&#paper {
-				transform: translate(max(-12%, -2.5rem), max(-30%, -3rem));
+				transform: translate(max(-24.5%, -5.4rem), max(-15.88%, -2.1rem));
 			}
 			&#scissors {
-				transform: translate(min(12%, 2.5rem), max(-30%, -3rem));
+				transform: translate(min(24.5%, 5.4rem), max(-15.88%, -2.1rem));
 			}
 		}
 
@@ -87,8 +88,8 @@ export const Container = styled.section`
 	}
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
-		background-size: contain;
-		flex: 0.85;
+		background-size: 100%;
+		flex: 1;
 	}
 	@media screen and (min-width: 768px) {
 		flex: 0.9;
