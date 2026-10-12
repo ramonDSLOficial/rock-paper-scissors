@@ -9,6 +9,7 @@ export const Container = styled.section`
 		'rock rock';
 	background: url('./images/bg-triangle.svg') center no-repeat;
 	align-items: center;
+	justify-content: center;
 	background-size: 100%;
 	width: min(82%, 38rem);
 
@@ -29,10 +30,6 @@ export const Container = styled.section`
 		}
 
 		@media screen and (max-width: 680px) and (max-height: 650px) {
-			&#paper,
-			&#scissors {
-				justify-self: center;
-			}
 			&#paper {
 				transform: translate(max(-24.5%, -5.4rem), max(-15.88%, -2.1rem));
 			}
@@ -40,7 +37,6 @@ export const Container = styled.section`
 				transform: translate(min(24.5%, 5.4rem), max(-15.88%, -2.1rem));
 			}
 		}
-
 		@media screen and (min-width: 768px) {
 			&#paper,
 			&#scissors {
@@ -59,6 +55,18 @@ export const Container = styled.section`
 			}
 			&#scissors {
 				transform: translate(min(28%, 4rem), -5rem);
+			}
+		}
+		@media screen and (max-width: 768px) and (max-height: 1200px) {
+			&#paper,
+			&#scissors {
+				justify-self: center;
+			}
+			&#paper {
+				transform: translate(max(-24.5%, -5.4rem), max(-15.88%, -.89rem));
+			}
+			&#scissors {
+				transform: translate(min(24.5%, 5.4rem), max(-15.88%, -.89rem));
 			}
 		}
 		@media screen and (min-width: 1199px) {
