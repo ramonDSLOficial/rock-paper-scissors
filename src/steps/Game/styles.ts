@@ -16,15 +16,18 @@ export const Container = styled.section`
 	}
 
 	@media screen and (min-width: 1199px) {
-		grid-template-columns: 1fr 0fr 1fr;
+		grid-template-columns: .3fr 0fr .3fr;
 		grid-template-rows: 1fr;
 		grid-template-areas:
 			'playerOne result playerTwo';	
-		transition: grid-template-columns 1.45s ease-in-out;
+		transition: grid-template-columns 1.55s ease-in-out, gap 1.55s ease-in-out;
 		align-items: center;
+		justify-content: center;
+		gap: 2.5vh 1.5vw;
 
 		&.showResult {
-			grid-template-columns: 1fr .6fr 1fr;
+			grid-template-columns: 1fr .75fr 1fr;
+			gap: 2.5vh 5vw;
 		}
 	}
 `;
@@ -46,10 +49,10 @@ export const ResultContainer = styled.div`
 		transform: scale(1) rotate(360deg);
 	}
 `;
-// NOTE o texto está sendo cortado 
+
 export const Message = styled.h2`
 	color: ${(props) => props.theme.color.neutral.text.textT1};
-	font-size: clamp(3.8rem, 2.12rem + 8.26vw, 4.6rem);
+	font-size: clamp(3.8rem, 2.12rem + 7.26vw, 4.35rem);
 	font-weight: ${(props) => props.theme.fontWeight.bold};
 	letter-spacing: 2px;
 	white-space: nowrap;
