@@ -7,6 +7,8 @@ import ModalRulesBtn from './components/ModalRulesBtn';
 import Rules from './steps/Rules';
 import Game from './steps/Game';
 import { useGameStore } from './store/gameStore';
+import ButtonsFooter from './components/ButtonsFooter';
+import ConfigsModalBtn from './components/ConfigsModalBtn';
 
 const App: React.FC = () => {
 	const modalRulesRef = useRef<HTMLDialogElement | null>(null);
@@ -19,7 +21,11 @@ const App: React.FC = () => {
 			<Main>
 				{!hasGameHapping ? <Home /> : <Game />}
 
-				<ModalRulesBtn modalRulesRef={modalRulesRef} />
+				<ButtonsFooter>
+					<ConfigsModalBtn />
+					<ModalRulesBtn modalRulesRef={modalRulesRef} />
+				</ButtonsFooter>
+
 				<Rules modalRulesRef={modalRulesRef} />
 			</Main>
 
