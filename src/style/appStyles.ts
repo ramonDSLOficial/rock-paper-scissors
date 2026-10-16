@@ -43,6 +43,13 @@ export const Main = styled.main`
 			margin: 0;
 		}
 	}
+	@media screen and (min-width: 768px) and (min-height: 1000px) {
+		gap: 0;
+		
+		section {
+			margin-block: auto;
+		}
+	}
 	@media screen and (min-width: 1199px) {
 		justify-content: center;
 
