@@ -1,12 +1,8 @@
 import styled from 'styled-components';
-import { Container as ModalRulesBtn} from '../ModalRulesBtn/styles'
 
 export const Container = styled.div`
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    
-    ${ModalRulesBtn} {
-        margin: 0 auto;
-    }
 `;
