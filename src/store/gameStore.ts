@@ -9,32 +9,38 @@ type GameState = {
 type GameStore = {
 	score: number;
 	hasGameHapping: boolean;
+	hasExtraMoves: boolean;
 	gameState: GameState;
 	setFirstPlayerMove: (move: Moves) => void;
 	setSecondPlayerMove: (move: Moves) => void;
 	startGame: () => void;
+	changeAvailableMoves: () => void;
 	restartGame: () => void;
-    changeScoreValue: (operation: number) => void;
+	changeScoreValue: (operation: number) => void;
 };
 
 export const useGameStore = create<GameStore>((set) => ({
 	score: 0,
 	hasGameHapping: false,
+	hasExtraMoves: false,
 	gameState: {},
 	setFirstPlayerMove: (move) => set(() => ({ gameState: { firstPlayer: move } })),
 	setSecondPlayerMove: (move) =>
 		set((state) => ({ gameState: { ...state.gameState, secondPlayer: move } })),
 	startGame: () => set(() => ({ hasGameHapping: true })),
-	restartGame: () => set(() => ({
-		gameState: {
-			firstPlayer: null,
-			secondPlayer: null,
-			result: null,
-		},
-		hasGameHapping: false
-	})),
-    changeScoreValue: (operation) => set((state) => {
-		const newScore = state.score + operation
-		return { score: newScore >= 0 ? newScore : 0 }
-	})
+	changeAvailableMoves: () => set((state) => ({ hasExtraMoves: !state.hasExtraMoves })),
+	restartGame: () =>
+		set(() => ({
+			gameState: {
+				firstPlayer: null,
+				secondPlayer: null,
+				result: null,
+			},
+			hasGameHapping: false,
+		})),
+	changeScoreValue: (operation) =>
+		set((state) => {
+			const newScore = state.score + operation;
+			return { score: newScore >= 0 ? newScore : 0 };
+		}),
 }));

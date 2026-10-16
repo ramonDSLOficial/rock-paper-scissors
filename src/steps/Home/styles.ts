@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { Container as Move } from '../../components/Move/styles';
+import type { GameCommonStyles } from '../../types/types';
 
-export const Container = styled.section`
+export const Container = styled.section<GameCommonStyles>`
 	flex: 0.55;
 	display: grid;
 	grid-template-areas:
