@@ -10,7 +10,8 @@ export const Container = styled.section<GameCommonStyles>`
 			!$hasExtraMoves ? 'triangle' : 'pentagon'
 		}.svg') center no-repeat`};
 	background-size: contain;
-	aspect-ratio: ${({ $hasExtraMoves }) => !$hasExtraMoves ? '313 / 278' : '329 / 313'};
+	aspect-ratio: ${({ $hasExtraMoves }) =>
+		!$hasExtraMoves ? '313 / 278' : '329 / 313'};
 
 	& ${Move} {
 		position: absolute;
@@ -36,5 +37,55 @@ export const Container = styled.section<GameCommonStyles>`
 				`;
 			else return css``;
 		}}
+
+		@media screen and (min-width: 1199px) {
+			${({ $hasExtraMoves }) => {
+				if (!$hasExtraMoves)
+					return css`
+						&#rock {
+							top: 75%;
+							left: 50%;
+						}
+						&#paper,
+						&#scissors {
+							top: 5%;
+						}
+						&#paper {
+							left: 5%;
+						}
+						&#scissors {
+							left: 95%;
+						}
+					`;
+				else return css``;
+			}}
+		}
+		@media screen and (min-width: 2000px) {
+			${({ $hasExtraMoves }) => {
+				if (!$hasExtraMoves)
+					return css`
+						&#rock {
+							top: 80%;
+						}
+					`;
+			}}
+		}
+		@media screen and (min-width: 3000px) {
+			${({ $hasExtraMoves }) => {
+				if (!$hasExtraMoves)
+					return css`
+						&#rock {
+							top: 91%;
+						}
+					`;
+			}}
+		}
+	}
+
+	@media screen and (min-width: 1199px) {
+		width: min(20.6vw, 32.33rem);
+	}
+	@media screen and (min-width: 2000px) {
+		width: min(20.6vw, 66.33rem);		
 	}
 `;

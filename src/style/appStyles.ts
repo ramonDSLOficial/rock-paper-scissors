@@ -51,10 +51,14 @@ export const Main = styled.main`
 		}
 	}
 	@media screen and (min-width: 1199px) {
-		justify-content: center;
+		gap: 10vh;
+		padding-bottom: 0;
+	}
+	@media screen and (min-width: 1199px) and (min-height: 700px) {
+		gap: 0;
 
 		section {
-			margin: auto 0;
-		}
+			margin-block: auto;
+		}		
 	}
 `;

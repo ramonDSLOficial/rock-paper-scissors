@@ -115,37 +115,15 @@ export const Container = styled.button<MoveStyledProps>`
 			}
 		}}
 	}
-	@media screen and (min-width: 1600px) {
-		border-width: 1vw;
-
-		${Game} & {
-			border-width: 1.35vw;
-		}
-
-		${({ $move }) => {
-			if ($move)
-				return css`
-					padding: 2.385vw;
-
-					${Game} & {
-						padding: 2.556vw 2.765vw;
-					}
-				`;
-			else {
-				return css`
-					${Game} & {
-						padding: 1.226vw 1.426vw;
-					}
-				`;
-			}
-		}}
+	@media screen and (min-width: 2000px) {
+		border-width: min(1.23vw, 6.2rem);
 	}
 	@media screen and (min-width: 3000px) and (max-height: 1500px) {
 		${({ $move }) => {
 			if ($move)
 				return css`
 					${Home} & {
-						padding: 2.085vw;
+						padding: 1.655vw;
 					}
 				`;
 		}}
@@ -172,8 +150,8 @@ export const Image = styled.img<MoveStyledProps>`
 		height: min(12vw, 6.895rem);
 	}
 	@media screen and (min-width: 1199px) {
-		width: min(8vw, 4.954rem);
-		height: min(8vw, 5rem);
+		width: min(4vw, 6.5rem);
+		height: min(4vw, 7rem);
 		object-fit: contain;
 
 		${Game} & {
@@ -181,13 +159,8 @@ export const Image = styled.img<MoveStyledProps>`
 			height: min(8vw, 9rem);
 		}
 	}
-	@media screen and (min-width: 1600px) {
-		width: 3.5vw;
-		height: 3.5vw;
-
-		${Game} & {
-			width: 5.83vw;
-			height: 5.83vw;
-		}
+	@media screen and (min-width: 2000px) {
+		width: min(4.2vw, 14rem);
+		height: min(4.2vw, 15.5rem);
 	}
 `;
