@@ -51,10 +51,10 @@ export const Container = styled.section<GameCommonStyles>`
 							top: 5%;
 						}
 						&#paper {
-							left: 5%;
+							left: 10%;
 						}
 						&#scissors {
-							left: 95%;
+							left: 90%;
 						}
 					`;
 				else return css``;
@@ -87,5 +87,8 @@ export const Container = styled.section<GameCommonStyles>`
 	}
 	@media screen and (min-width: 2000px) {
 		width: min(20.6vw, 66.33rem);		
+	}
+	@media screen and (min-width: 3000px) and (max-height: 1600px) {
+		width: min(20.6vw, 43.33rem);		
 	}
 `;

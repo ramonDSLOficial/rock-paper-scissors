@@ -118,10 +118,12 @@ export const Container = styled.button<MoveStyledProps>`
 	@media screen and (min-width: 2000px) {
 		border-width: min(1.23vw, 6.2rem);
 	}
-	@media screen and (min-width: 3000px) and (max-height: 1500px) {
+	@media screen and (min-width: 3000px) and (max-height: 1600px) {
 		${({ $move }) => {
 			if ($move)
 				return css`
+					border-width: min(1.23vw, 3.6rem);
+
 					${Home} & {
 						padding: 1.655vw;
 					}
@@ -162,5 +164,9 @@ export const Image = styled.img<MoveStyledProps>`
 	@media screen and (min-width: 2000px) {
 		width: min(4.2vw, 14rem);
 		height: min(4.2vw, 15.5rem);
+	}
+	@media screen and (min-width: 3000px) and (max-height: 1600px) {
+		width: min(4.2vw, 11rem);
+		height: min(4.2vw, 12.5rem);
 	}
 `;
