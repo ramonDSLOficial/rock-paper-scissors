@@ -121,7 +121,10 @@ export const Container = styled.section<GameCommonStyles>`
 							left: 90%;
 						}
 					`;
-				else return css`transform: translate(-50%, -50%);`;
+				else
+					return css`
+						transform: translate(-50%, -50%);
+					`;
 			}}
 		}
 		@media screen and (min-width: 2000px) {
@@ -166,10 +169,21 @@ export const Container = styled.section<GameCommonStyles>`
 		}}
 	}
 	@media screen and (min-width: 1199px) {
-		width: min(18.2vw, 32.33rem);
+		width: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? 'min(21.2vw, 32.33rem)' : 'min(18.2vw, 32.33rem)'};
+	}
+	@media screen and (min-width: 1199px) and (max-height: 700px) {
+		&& {
+			margin: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? '0' : 'auto 0'};
+		}
 	}
 	@media screen and (min-width: 2000px) {
 		width: min(20.6vw, 66.33rem);
+		
+		&& {
+			margin: auto 0;
+		}
 	}
 	@media screen and (min-width: 3000px) and (max-height: 1600px) {
 		width: min(20.6vw, 43.33rem);
