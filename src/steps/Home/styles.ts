@@ -121,7 +121,7 @@ export const Container = styled.section<GameCommonStyles>`
 							left: 90%;
 						}
 					`;
-				else return css``;
+				else return css`transform: translate(-50%, -50%);`;
 			}}
 		}
 		@media screen and (min-width: 2000px) {
@@ -166,7 +166,7 @@ export const Container = styled.section<GameCommonStyles>`
 		}}
 	}
 	@media screen and (min-width: 1199px) {
-		width: min(20.6vw, 32.33rem);
+		width: min(18.2vw, 32.33rem);
 	}
 	@media screen and (min-width: 2000px) {
 		width: min(20.6vw, 66.33rem);

@@ -84,16 +84,19 @@ export const Container = styled.button<MoveStyledProps>`
 		}}
 	}
 	@media screen and (min-width: 1199px) {
-		border-width: min(3.33vw, 1.7rem);
+		border-width: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? 'min(3.33vw, 1.7rem)' : 'min(1.03vw, 1.8rem)'};
 
 		${Game} & {
 			border-width: min(3.33vw, 2.2rem);
 		}
 
-		${({ $move }) => {
+		${({ $move, $hasExtraMoves }) => {
 			if ($move)
 				return css`
-					padding: 2.385vw;
+					padding: ${!$hasExtraMoves
+						? '2.385vw'
+						: 'min(1.685vw, 3.268rem)'};
 
 					${Game} & {
 						padding: 3.456vw 4.265vw;
@@ -123,15 +126,18 @@ export const Container = styled.button<MoveStyledProps>`
 	}
 	@media screen and (min-width: 2000px) {
 		border-width: min(1.23vw, 6.2rem);
+		padding: ${({ $hasExtraMoves }) => !$hasExtraMoves ? '2.385vw' : 'min(1.885vw, 8.268rem)'};
 	}
 	@media screen and (min-width: 3000px) and (max-height: 1600px) {
-		${({ $move }) => {
+		${({ $move, $hasExtraMoves }) => {
 			if ($move)
 				return css`
-					border-width: min(1.23vw, 3.6rem);
+					border-width: ${!$hasExtraMoves
+						? 'min(1.23vw, 3.6rem)'
+						: 'min(1.03vw, 2.8rem)'};
 
 					${Home} & {
-						padding: 1.655vw;
+						padding: ${!$hasExtraMoves ? '1.655vw' : '1.255vw'};
 					}
 				`;
 		}}
@@ -145,7 +151,6 @@ export const Image = styled.img<MoveStyledProps>`
 		!$hasExtraMoves ? 'min(11.33vw, 5rem)' : 'min(11.33vw, 7.8rem)'};
 	height: ${({ $hasExtraMoves }) =>
 		!$hasExtraMoves ? 'min(12vw, 5.66rem)' : 'min(12vw, 7.97rem)'};
-	/* //NOTE Provavelmente por essa regra só para o extra */
 	object-fit: contain;
 	transition: all 0.5s ease-in-out;
 
@@ -158,9 +163,11 @@ export const Image = styled.img<MoveStyledProps>`
 		height: min(12vw, 6.895rem);
 	}
 	@media screen and (min-width: 1199px) {
-		width: min(4vw, 6.5rem);
-		height: min(4vw, 7rem);
-		object-fit: contain;
+		width: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? 'min(4vw, 6.5rem)' : 'min(3.3vw, 7rem)'};
+		height: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? 'min(4vw, 7rem)' : 'min(3.3vw, 7rem)'};
+		/* object-fit: contain; */
 
 		${Game} & {
 			width: min(8vw, 8rem);
@@ -168,11 +175,15 @@ export const Image = styled.img<MoveStyledProps>`
 		}
 	}
 	@media screen and (min-width: 2000px) {
-		width: min(4.2vw, 14rem);
-		height: min(4.2vw, 15.5rem);
+		width: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? 'min(4.2vw, 14rem)' : 'min(3.8vw, 10rem)'};
+		height: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? 'min(4.2vw, 15.5rem)' : 'min(3.8vw, 10rem)'};
 	}
 	@media screen and (min-width: 3000px) and (max-height: 1600px) {
-		width: min(4.2vw, 11rem);
-		height: min(4.2vw, 12.5rem);
+		width: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? 'min(4.2vw, 11rem)' : 'min(2.2vw, 8rem)'};
+		height: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? 'min(4.2vw, 12.5rem)' : 'min(2.2vw, 8rem)'};
 	}
 `;

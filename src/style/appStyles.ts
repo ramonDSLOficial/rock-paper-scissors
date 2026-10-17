@@ -42,6 +42,7 @@ export const Main = styled.main`
 		gap: 4vh;
 		
 		section {
+			/* // NOTE passar apenas para Game */
 			margin: 0;
 		}
 	}

@@ -15,7 +15,11 @@ export const Container = styled.header`
     @media screen and (max-width: 380px) and (max-height: 650px) {
         margin-bottom: 13%;
     }
+    @media screen and (min-width: 1199px) {
+        margin-bottom: 2%;
+    }
     @media screen and (min-width: 1600px) {
+        margin-bottom: 0;
         padding: min(1.5vw, 3.35rem);
         width: min(85%, 52vw);
     }
