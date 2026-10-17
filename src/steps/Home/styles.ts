@@ -154,7 +154,16 @@ export const Container = styled.section<GameCommonStyles>`
 		}
 	}
 	@media screen and (min-width: 768px) and (min-height: 1000px) {
-		width: min(36.33vw, 36.33rem);
+		${({ $hasExtraMoves }) => {
+			if (!$hasExtraMoves)
+				return css`
+					width: min(45.33vw, 36.33rem);
+				`;
+			else
+				return css`
+					width: min(36.33vw, 36.33rem);
+				`;
+		}}
 	}
 	@media screen and (min-width: 1199px) {
 		width: min(20.6vw, 32.33rem);
