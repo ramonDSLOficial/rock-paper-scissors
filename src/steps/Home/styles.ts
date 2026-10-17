@@ -150,11 +150,14 @@ export const Container = styled.section<GameCommonStyles>`
 	}
 
 	@media screen and (min-width: 768px) {
-		width: min(23.6vw, 31.33rem);
-
-		&& {
-			margin: auto 0;
-		}
+		${({ $hasExtraMoves }) => {
+			if ($hasExtraMoves) return css`
+					&& {
+						margin: auto 0;
+					}
+					width: min(23.6vw, 31.33rem);
+				`;
+		}}
 	}
 	@media screen and (min-width: 768px) and (min-height: 1000px) {
 		${({ $hasExtraMoves }) => {
@@ -174,13 +177,12 @@ export const Container = styled.section<GameCommonStyles>`
 	}
 	@media screen and (min-width: 1199px) and (max-height: 700px) {
 		&& {
-			margin: ${({ $hasExtraMoves }) =>
-			!$hasExtraMoves ? '0' : 'auto 0'};
+			margin: ${({ $hasExtraMoves }) => (!$hasExtraMoves ? '0' : 'auto 0')};
 		}
 	}
 	@media screen and (min-width: 2000px) {
 		width: min(20.6vw, 66.33rem);
-		
+
 		&& {
 			margin: auto 0;
 		}
