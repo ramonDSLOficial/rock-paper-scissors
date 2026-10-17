@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import type { GameCommonStyles } from '../../types/types';
 
-export const Container = styled.dialog`
+export const Container = styled.dialog<GameCommonStyles>`
 	position: absolute;
 	top: 0;
 	width: 100%;
@@ -19,7 +20,7 @@ export const Container = styled.dialog`
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
 		&[open] {
-			grid-auto-rows: 0.31fr;
+			grid-auto-rows: ${({ $hasExtraMoves }) => !$hasExtraMoves ? '0.31fr' : '0.45fr'};
 		}
 	}
 
@@ -72,11 +73,11 @@ export const Title = styled.h3`
 	}
 `;
 
-export const RulesImage = styled.img`
+export const RulesImage = styled.img<GameCommonStyles>`
 	width: 85%;
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
-		width: 55%;
+		width: ${({ $hasExtraMoves }) => !$hasExtraMoves ? '55%' : '75%'};
 	}
 
 	@media screen and (min-width: 768px) {

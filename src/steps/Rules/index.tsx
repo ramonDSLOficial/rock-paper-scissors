@@ -33,10 +33,14 @@ const Rules: React.FC<RulesProps> = ({ modalRulesRef }) => {
 	};
 
 	return (
-		<Container ref={modalRulesRef}>
+		<Container $hasExtraMoves={hasExtraMoves} ref={modalRulesRef}>
 			<Title>rules</Title>
 
-			<RulesImage src={rules[gameMode].img} alt={rules[gameMode].text} />
+			<RulesImage
+				$hasExtraMoves={hasExtraMoves}
+				src={rules[gameMode].img}
+				alt={rules[gameMode].text}
+			/>
 
 			<CloseModalBtn title="close rules" onClick={closeModalRules} />
 		</Container>
