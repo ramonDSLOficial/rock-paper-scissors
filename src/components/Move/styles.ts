@@ -34,7 +34,7 @@ export const Container = styled.button<MoveStyledProps>`
 			return css`
 				padding: ${!$hasExtraMoves
 					? 'min(6.834vw, 4.385rem)'
-					: 'min(5.864vw, 3.185rem)'};
+					: 'min(4.864vw, 2.865rem)'};
 				background-color: ${color.neutral.badge.bgColorT1};
 				background-clip: padding-box;
 				border-color: ${color.moves[$move + 'Accent']};
@@ -57,8 +57,10 @@ export const Container = styled.button<MoveStyledProps>`
 	}}
 
 	@media screen and (max-width: 680px) and (max-height: 650px) {
-		padding: 8.137vw;
-		border-width: 12.968px;
+		padding: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? '8.137vw' : '5.137vw'};
+		border-width: ${({ $hasExtraMoves }) =>
+			!$hasExtraMoves ? '12.968px' : '8.968px'};
 
 		${({ $move, theme: { color } }) =>
 			$move
@@ -138,16 +140,16 @@ export const Image = styled.img<MoveStyledProps>`
 	display: block;
 	visibility: ${({ $move }) => ($move ? 'initial' : 'hidden')};
 	width: ${({ $hasExtraMoves }) =>
-		!$hasExtraMoves ? 'min(11.33vw, 5rem)' : 'min(10vw, 6.8rem)'};
+		!$hasExtraMoves ? 'min(11.33vw, 5rem)' : 'min(11.33vw, 7.8rem)'};
 	height: ${({ $hasExtraMoves }) =>
-		!$hasExtraMoves ? 'min(12vw, 5.66rem)' : 'min(10.33vw, 6.97rem)'};
+		!$hasExtraMoves ? 'min(12vw, 5.66rem)' : 'min(12vw, 7.97rem)'};
 	/* //NOTE Provavelmente por essa regra só para o extra */
 	object-fit: contain;
 	transition: all 0.5s ease-in-out;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
-		width: 3.9rem;
-		height: 3.9rem;
+		width: ${({ $hasExtraMoves }) => (!$hasExtraMoves ? '3.9rem' : '3.1rem')};
+		height: ${({ $hasExtraMoves }) => (!$hasExtraMoves ? '3.9rem' : '3.1rem')};
 	}
 	@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
 		width: 4.2rem;

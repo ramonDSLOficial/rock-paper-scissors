@@ -25,31 +25,43 @@ export const Container = styled.section<GameCommonStyles>`
 						left: 50%;
 					}
 					&#paper,
-					&#scissors {
-						top: 5%;
-					}
-					&#paper {
-						left: 15%;
-					}
-					&#scissors {
-						left: 85%;
-					}
+					&#scissors {top: 5%;}
+					&#paper {left: 15%;}
+					&#scissors {left: 85%;}
 				`;
 			else
 				return css`
-					&#rock {
-					}
-					&#paper {
-					}
-					&#scissors {
-					}
-					&#lizard {
-					}
-					&#spock {
-					}
+					&#scissors {left: 50%;}
+
+					&#spock,
+					&#paper {top: 40%;}
+					&#paper {left: 100%;}
+
+					&#lizard,
+					&#rock {top: 100%;}
+					&#lizard {left: 17%;}
+					&#rock {left: 83%;}
 				`;
 		}}
 
+		@media screen and (max-width: 680px) and (max-height: 650px) {
+			${({ $hasExtraMoves }) => {
+				if ($hasExtraMoves)
+					return css`
+						&#scissors {top: 5%;}
+
+						&#spock,
+						&#paper {top: 40%;}
+						&#spock {left: 10%;}
+						&#paper {left: 90%;}
+
+						&#lizard,
+						&#rock {top: 90%;}
+						&#lizard {left: 20%;}
+						&#rock {left: 80%;}
+					`;
+			}}
+		}
 		@media screen and (min-width: 1199px) {
 			${({ $hasExtraMoves }) => {
 				if (!$hasExtraMoves)
@@ -59,15 +71,9 @@ export const Container = styled.section<GameCommonStyles>`
 							left: 50%;
 						}
 						&#paper,
-						&#scissors {
-							top: 5%;
-						}
-						&#paper {
-							left: 10%;
-						}
-						&#scissors {
-							left: 90%;
-						}
+						&#scissors {top: 5%;}
+						&#paper {left: 10%;}
+						&#scissors {left: 90%;}
 					`;
 				else return css``;
 			}}
@@ -76,9 +82,7 @@ export const Container = styled.section<GameCommonStyles>`
 			${({ $hasExtraMoves }) => {
 				if (!$hasExtraMoves)
 					return css`
-						&#rock {
-							top: 80%;
-						}
+						&#rock {top: 80%;}
 					`;
 			}}
 		}
@@ -86,9 +90,7 @@ export const Container = styled.section<GameCommonStyles>`
 			${({ $hasExtraMoves }) => {
 				if (!$hasExtraMoves)
 					return css`
-						&#rock {
-							top: 91%;
-						}
+						&#rock {top: 91%;}
 					`;
 			}}
 		}
