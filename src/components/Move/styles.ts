@@ -70,10 +70,12 @@ export const Container = styled.button<MoveStyledProps>`
 				: ''}
 	}
 	@media screen and (min-width: 768px) {
-		${({ $move }) => {
+		${({ $move, $hasExtraMoves }) => {
 			if ($move)
 				return css`
-					padding: min(6.865vw, 4.285rem);
+					padding: ${!$hasExtraMoves
+						? 'min(6.865vw, 4.285rem)'
+						: 'min(6.865vw, 2.885rem)'};
 				`;
 			else
 				return css`
@@ -150,10 +152,6 @@ export const Image = styled.img<MoveStyledProps>`
 	@media screen and (max-width: 380px) and (max-height: 650px) {
 		width: ${({ $hasExtraMoves }) => (!$hasExtraMoves ? '3.9rem' : '3.1rem')};
 		height: ${({ $hasExtraMoves }) => (!$hasExtraMoves ? '3.9rem' : '3.1rem')};
-	}
-	@media screen and (max-width: 380px) and (min-height: 651px) and (max-height: 780px) {
-		width: 4.2rem;
-		height: 4.2rem;
 	}
 	@media screen and (min-width: 768px) {
 		width: min(11.33vw, 6.895rem);

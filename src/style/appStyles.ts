@@ -11,10 +11,12 @@ export const Container = styled.div`
 	background: ${(props) =>
 		`${props.theme.color.neutral.badge.outline} linear-gradient(to bottom, ${props.theme.color.neutral.badge.gradient})`};
 
+	@media screen and (min-width: 768px) {
+		padding-bottom: 0;
+	}
 	@media screen and (min-width: 1199px) {
 		justify-content: space-evenly;
 		overflow: hidden;
-		padding-bottom: 0;
 	}
 `;
 // FIXME retirar daqui a atribuição de margem para os sections

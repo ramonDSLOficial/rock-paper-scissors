@@ -25,22 +25,40 @@ export const Container = styled.section<GameCommonStyles>`
 						left: 50%;
 					}
 					&#paper,
-					&#scissors {top: 5%;}
-					&#paper {left: 15%;}
-					&#scissors {left: 85%;}
+					&#scissors {
+						top: 5%;
+					}
+					&#paper {
+						left: 15%;
+					}
+					&#scissors {
+						left: 85%;
+					}
 				`;
 			else
 				return css`
-					&#scissors {left: 50%;}
+					&#scissors {
+						left: 50%;
+					}
 
 					&#spock,
-					&#paper {top: 40%;}
-					&#paper {left: 100%;}
+					&#paper {
+						top: 40%;
+					}
+					&#paper {
+						left: 100%;
+					}
 
 					&#lizard,
-					&#rock {top: 100%;}
-					&#lizard {left: 17%;}
-					&#rock {left: 83%;}
+					&#rock {
+						top: 100%;
+					}
+					&#lizard {
+						left: 17%;
+					}
+					&#rock {
+						left: 83%;
+					}
 				`;
 		}}
 
@@ -48,17 +66,39 @@ export const Container = styled.section<GameCommonStyles>`
 			${({ $hasExtraMoves }) => {
 				if ($hasExtraMoves)
 					return css`
-						&#scissors {top: 5%;}
+						&#scissors {
+							top: 5%;
+						}
 
 						&#spock,
-						&#paper {top: 40%;}
-						&#spock {left: 10%;}
-						&#paper {left: 90%;}
+						&#paper {
+							top: 40%;
+						}
+						&#spock {
+							left: 10%;
+						}
+						&#paper {
+							left: 90%;
+						}
 
 						&#lizard,
-						&#rock {top: 90%;}
-						&#lizard {left: 20%;}
-						&#rock {left: 80%;}
+						&#rock {
+							top: 90%;
+						}
+						&#lizard {
+							left: 20%;
+						}
+						&#rock {
+							left: 80%;
+						}
+					`;
+			}}
+		}
+		@media screen and (min-width: 768px) {
+			${({ $hasExtraMoves }) => {
+				if ($hasExtraMoves)
+					return css`
+						transform: translate(-50%, -50%) scale(0.75);
 					`;
 			}}
 		}
@@ -71,9 +111,15 @@ export const Container = styled.section<GameCommonStyles>`
 							left: 50%;
 						}
 						&#paper,
-						&#scissors {top: 5%;}
-						&#paper {left: 10%;}
-						&#scissors {left: 90%;}
+						&#scissors {
+							top: 5%;
+						}
+						&#paper {
+							left: 10%;
+						}
+						&#scissors {
+							left: 90%;
+						}
 					`;
 				else return css``;
 			}}
@@ -82,7 +128,9 @@ export const Container = styled.section<GameCommonStyles>`
 			${({ $hasExtraMoves }) => {
 				if (!$hasExtraMoves)
 					return css`
-						&#rock {top: 80%;}
+						&#rock {
+							top: 80%;
+						}
 					`;
 			}}
 		}
@@ -90,12 +138,24 @@ export const Container = styled.section<GameCommonStyles>`
 			${({ $hasExtraMoves }) => {
 				if (!$hasExtraMoves)
 					return css`
-						&#rock {top: 91%;}
+						&#rock {
+							top: 91%;
+						}
 					`;
 			}}
 		}
 	}
 
+	@media screen and (min-width: 768px) {
+		width: min(23.6vw, 31.33rem);
+
+		&& {
+			margin: auto 0;
+		}
+	}
+	@media screen and (min-width: 768px) and (min-height: 1000px) {
+		width: min(36.33vw, 36.33rem);
+	}
 	@media screen and (min-width: 1199px) {
 		width: min(20.6vw, 32.33rem);
 	}
