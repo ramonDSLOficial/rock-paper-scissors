@@ -35,7 +35,19 @@ export const Container = styled.section<GameCommonStyles>`
 						left: 85%;
 					}
 				`;
-			else return css``;
+			else
+				return css`
+					&#rock {
+					}
+					&#paper {
+					}
+					&#scissors {
+					}
+					&#lizard {
+					}
+					&#spock {
+					}
+				`;
 		}}
 
 		@media screen and (min-width: 1199px) {
@@ -86,9 +98,9 @@ export const Container = styled.section<GameCommonStyles>`
 		width: min(20.6vw, 32.33rem);
 	}
 	@media screen and (min-width: 2000px) {
-		width: min(20.6vw, 66.33rem);		
+		width: min(20.6vw, 66.33rem);
 	}
 	@media screen and (min-width: 3000px) and (max-height: 1600px) {
-		width: min(20.6vw, 43.33rem);		
+		width: min(20.6vw, 43.33rem);
 	}
 `;

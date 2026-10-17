@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import type { Moves } from '../../types/types';
+import type { GameCommonStyles, Moves } from '../../types/types';
 import { Container as Game } from '../../steps/Game/styles';
 import { Container as Home } from '../../steps/Home/styles';
 
-interface MoveStyledProps {
+interface MoveStyledProps extends GameCommonStyles {
 	$move?: Moves;
 }
 
@@ -29,10 +29,12 @@ export const Container = styled.button<MoveStyledProps>`
 		box-shadow 0.5s ease-in-out, padding 0.5s ease-in-out,
 		filter 0.5s ease-in-out;
 
-	${({ $move, theme: { color } }) => {
+	${({ $move, $hasExtraMoves, theme: { color } }) => {
 		if ($move)
 			return css`
-				padding: min(6.834vw, 4.385rem);
+				padding: ${!$hasExtraMoves
+					? 'min(6.834vw, 4.385rem)'
+					: 'min(5.864vw, 3.185rem)'};
 				background-color: ${color.neutral.badge.bgColorT1};
 				background-clip: padding-box;
 				border-color: ${color.moves[$move + 'Accent']};
@@ -135,8 +137,12 @@ export const Container = styled.button<MoveStyledProps>`
 export const Image = styled.img<MoveStyledProps>`
 	display: block;
 	visibility: ${({ $move }) => ($move ? 'initial' : 'hidden')};
-	width: min(11.33vw, 5rem);
-	height: min(12vw, 5.66rem);
+	width: ${({ $hasExtraMoves }) =>
+		!$hasExtraMoves ? 'min(11.33vw, 5rem)' : 'min(10vw, 6.8rem)'};
+	height: ${({ $hasExtraMoves }) =>
+		!$hasExtraMoves ? 'min(12vw, 5.66rem)' : 'min(10.33vw, 6.97rem)'};
+	/* //NOTE Provavelmente por essa regra só para o extra */
+	object-fit: contain;
 	transition: all 0.5s ease-in-out;
 
 	@media screen and (max-width: 380px) and (max-height: 650px) {
