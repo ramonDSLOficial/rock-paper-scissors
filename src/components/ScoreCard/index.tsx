@@ -1,14 +1,16 @@
 import React from 'react';
 
 import { Container, ScoreText, ScoreValue } from './styles';
-import { useGameStore } from '../../store/gameStore';
 
-const ScoreCard: React.FC = () => {
-	const { score } = useGameStore()
-	
+interface ScoreCardProps {
+	label: string;
+	score: number
+}
+
+const ScoreCard: React.FC<ScoreCardProps> = ({ label, score }) => {
 	return (
 		<Container>
-			<ScoreText>score</ScoreText>
+			<ScoreText>{label}</ScoreText>
 			<ScoreValue>{score}</ScoreValue>
 		</Container>
 	);

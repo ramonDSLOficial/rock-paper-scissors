@@ -25,7 +25,7 @@ export const useGameStore = create<GameStore>((set) => ({
 	score: 0,
 	hasGameHapping: false,
 	hasExtraMoves: false,
-	isMultiplayer: false,
+	isMultiplayer: true,
 	gameState: {},
 	setFirstPlayerMove: (move) => set(() => ({ gameState: { firstPlayer: move } })),
 	setSecondPlayerMove: (move) =>

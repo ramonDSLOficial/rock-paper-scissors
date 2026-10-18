@@ -5,7 +5,7 @@ import ScoreCard from '../ScoreCard';
 import { useGameStore } from '../../store/gameStore';
 
 const Header: React.FC = () => {
-	const { hasExtraMoves } = useGameStore();
+	const { hasExtraMoves, isMultiplayer, score } = useGameStore();
 	const gameMode = !hasExtraMoves ? 'normal' : 'bonus';
 	
 	const logo = {
@@ -21,11 +21,13 @@ const Header: React.FC = () => {
 	
 	return (
 		<Container>
+			{ isMultiplayer && <ScoreCard label='p1 score' score={score} />}
+			
 			<LogoTitle>
 				<img src={logo[gameMode].img} alt={logo[gameMode].alt} />
 			</LogoTitle>
 
-            <ScoreCard />
+            <ScoreCard label={isMultiplayer ? 'p2 score' : 'score'} score={score} />
 		</Container>
 	);
 };
