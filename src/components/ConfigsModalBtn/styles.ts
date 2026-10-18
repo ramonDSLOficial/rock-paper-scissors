@@ -13,7 +13,7 @@ export const Container = styled.button`
 		}
 	}
 	@media screen and (min-width: 1600px) {
-		width: min(25%, 45px);
+		width: min(2.368vw, 7.9rem);
 
 		& img {
 			width: 100%;
