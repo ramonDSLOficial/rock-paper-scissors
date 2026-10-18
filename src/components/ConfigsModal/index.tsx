@@ -10,7 +10,8 @@ interface ConfigsModalProps {
 }
 
 const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
-	const { hasExtraMoves, changeAvailableMoves } = useGameStore();
+	const { hasExtraMoves, changeAvailableMoves, isMultiplayer, changeGameMode } =
+		useGameStore();
 	const closeModalConfigs = (): void => modalConfigsRef.current.close();
 
 	return (
@@ -18,8 +19,16 @@ const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
 			<h2>Game Configurations</h2>
 
 			<Fieldset>
-				<Option label="extra moves" checked={hasExtraMoves} onChange={changeAvailableMoves} />
-				<Option label="pvp" />
+				<Option
+					label="extra moves"
+					checked={hasExtraMoves}
+					onChange={changeAvailableMoves}
+				/>
+				<Option
+					label="pvp"
+					checked={isMultiplayer}
+					onChange={changeGameMode}
+				/>
 			</Fieldset>
 
 			<CloseModalBtn title="close configs" onClick={closeModalConfigs} />
