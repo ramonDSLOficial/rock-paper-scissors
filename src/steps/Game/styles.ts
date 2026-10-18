@@ -35,7 +35,7 @@ export const Container = styled.section`
 		transition: grid-template-columns 1.55s ease-in-out, gap 1.55s ease-in-out;
 
 		&.showResult {
-			grid-template-columns: 1fr 0.75fr 1fr;
+			grid-template-columns: .8fr minmax(0.75fr, 53rem) .8fr;
 			gap: 2.5vh 5vw;
 		}
 	}

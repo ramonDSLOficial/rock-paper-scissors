@@ -61,7 +61,7 @@ const Game: React.FC = () => {
 	}, [gameState.secondPlayer]);
 
 	return (
-		<Container className={result ? `showResult` : undefined}>
+		<Container className={result ? `showResult` : undefined }>
 			<PlayerField
 				id="playerOne"
 				move={gameState.firstPlayer}

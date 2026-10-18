@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import type { GameCommonStyles, Moves } from '../../types/types';
 import { Container as Game } from '../../steps/Game/styles';
 import { Container as Home } from '../../steps/Home/styles';
-
 interface MoveStyledProps extends GameCommonStyles {
 	$move?: Moves;
 }
@@ -88,7 +87,7 @@ export const Container = styled.button<MoveStyledProps>`
 			!$hasExtraMoves ? 'min(3.33vw, 1.7rem)' : 'min(1.03vw, 1.8rem)'};
 
 		${Game} & {
-			border-width: min(3.33vw, 2.2rem);
+			border-width: min(1.63vw, 3.2rem);
 		}
 
 		${({ $move, $hasExtraMoves }) => {
@@ -99,7 +98,7 @@ export const Container = styled.button<MoveStyledProps>`
 						: 'min(1.685vw, 3.268rem)'};
 
 					${Game} & {
-						padding: 3.456vw 4.265vw;
+						padding: min(2.594vw, 5.649rem);
 					}
 
 					&:hover {
@@ -114,7 +113,7 @@ export const Container = styled.button<MoveStyledProps>`
 			else {
 				return css`
 					${Game} & {
-						padding: 2.626vw 3.396vw;
+						padding: min(1.454vw, 4.323rem);
 
 						&:focus {
 							outline: 1px solid cadetblue;
@@ -125,18 +124,29 @@ export const Container = styled.button<MoveStyledProps>`
 		}}
 	}
 	@media screen and (min-width: 2000px) {
-		border-width: min(1.23vw, 6.2rem);
-		padding: ${({ $hasExtraMoves }) => !$hasExtraMoves ? '2.385vw' : 'min(1.885vw, 8.268rem)'};
+		${({ $move, $hasExtraMoves }) => {
+			if ($move)
+				return css`
+					border-width: min(1.23vw, 6.2rem);
+					padding: ${!$hasExtraMoves
+						? '2.385vw'
+						: 'min(1.885vw, 8.268rem)'};
+
+					${Game} & {
+						border-width: min(1.23vw, 6.2rem);
+						padding: min(2.485vw, 9.123rem);
+					}
+				`;
+		}}
 	}
 	@media screen and (min-width: 3000px) and (max-height: 1600px) {
 		${({ $move, $hasExtraMoves }) => {
 			if ($move)
 				return css`
-					border-width: ${!$hasExtraMoves
-						? 'min(1.23vw, 3.6rem)'
-						: 'min(1.03vw, 2.8rem)'};
-
 					${Home} & {
+						border-width: ${!$hasExtraMoves
+							? 'min(1.23vw, 3.6rem)'
+							: 'min(1.03vw, 2.8rem)'};
 						padding: ${!$hasExtraMoves ? '1.655vw' : '1.255vw'};
 					}
 				`;
@@ -167,11 +177,10 @@ export const Image = styled.img<MoveStyledProps>`
 			!$hasExtraMoves ? 'min(4vw, 6.5rem)' : 'min(3.3vw, 7rem)'};
 		height: ${({ $hasExtraMoves }) =>
 			!$hasExtraMoves ? 'min(4vw, 7rem)' : 'min(3.3vw, 7rem)'};
-		/* object-fit: contain; */
 
 		${Game} & {
-			width: min(8vw, 8rem);
-			height: min(8vw, 9rem);
+			width: min(6.5vw, 15rem);
+			height: min(6.5vw, 15rem);
 		}
 	}
 	@media screen and (min-width: 2000px) {
@@ -179,11 +188,21 @@ export const Image = styled.img<MoveStyledProps>`
 			!$hasExtraMoves ? 'min(4.2vw, 14rem)' : 'min(3.8vw, 10rem)'};
 		height: ${({ $hasExtraMoves }) =>
 			!$hasExtraMoves ? 'min(4.2vw, 15.5rem)' : 'min(3.8vw, 10rem)'};
+
+		${Game} & {
+			width: min(7.5vw, 21.8rem);
+			height: min(7.5vw, 21.8rem);
+		}
 	}
 	@media screen and (min-width: 3000px) and (max-height: 1600px) {
 		width: ${({ $hasExtraMoves }) =>
 			!$hasExtraMoves ? 'min(4.2vw, 11rem)' : 'min(2.2vw, 8rem)'};
 		height: ${({ $hasExtraMoves }) =>
 			!$hasExtraMoves ? 'min(4.2vw, 12.5rem)' : 'min(2.2vw, 8rem)'};
+
+		${Game} & {
+			width: min(6.5vw, 20rem);
+			height: min(6.5vw, 20rem);
+		}
 	}
 `;
