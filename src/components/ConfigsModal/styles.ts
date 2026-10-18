@@ -25,8 +25,8 @@ export const Container = styled.dialog`
 	}
 
 	@media screen and (min-width: 768px) {
-		max-width: 500px;
-		max-height: 500px;
+		max-width: 32vw;
+		max-height: 30vw;
 		transform: translateY(-45%);
 
 		&[open] {
@@ -43,7 +43,7 @@ export const Container = styled.dialog`
 	}
 	@media screen and (min-width: 1600px) {
 		& ${CloseModalBtn} {
-			width: min(20%, 30px);
+			width: min(1.8vw, 6.89rem);
 		}
 	}
 `;
@@ -60,5 +60,10 @@ export const Fieldset = styled.fieldset`
 	@media screen and (min-width: 768px) {
 		padding: min(6.33vh, 55px) min(4vw, 30px);
 		width: 50%;
+	}
+	@media screen and (min-width: 1199px) {
+		padding: min(6.33vh, 6rem) min(4vw, 4rem);
+		width: 69%;
+		gap: min(1.25vh, 2.34rem);
 	}
 `;
