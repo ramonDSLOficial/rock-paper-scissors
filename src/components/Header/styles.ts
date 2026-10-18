@@ -11,6 +11,11 @@ export const Container = styled.header`
     outline: 3px solid ${props => props.theme.color.neutral.badge.outline};
     border-radius: 3px;
     width: min(85%, 60rem);
+    
+    &.multiplayer {
+        text-align: center;
+        padding: min(2.5vw, 1.35rem);
+    }
 
     @media screen and (max-width: 380px) and (max-height: 650px) {
         margin-bottom: 13%;
@@ -32,11 +37,15 @@ export const Container = styled.header`
 
 export const LogoTitle = styled.h1`
     line-height: 0;
-
+    
     & img {
         display: block;
         height: 100%;
         width: min(52.5%, 15rem);
+    }
+
+    ${Container}.multiplayer & img {
+        display: initial;
     }
 
     @media screen and (min-width: 768px) {
