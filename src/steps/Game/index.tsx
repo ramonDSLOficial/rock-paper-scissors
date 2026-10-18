@@ -7,61 +7,70 @@ import { defaultMoves } from '../../store/store';
 import type { Moves, Result } from '../../types/types';
 
 type Rules = {
-	'rock': Moves,
-	'paper': Moves,
-	'scissors': Moves,
-}
+	rock: Moves[];
+	paper: Moves[];
+	scissors: Moves[];
+	lizard: Moves[];
+	spock: Moves[];
+};
 
 const Game: React.FC = () => {
-	const { gameState, setSecondPlayerMove, changeScoreValue, restartGame } = useGameStore();
-	const [result, setResult] = useState<Result | null>(null)
+	const { gameState, setSecondPlayerMove, changeScoreValue, restartGame } =
+		useGameStore();
+	const [result, setResult] = useState<Result | null>(null);
 
 	const rules: Rules = {
-		'rock': 'scissors',
-		'paper': 'rock',
-		'scissors': 'paper'
-	}
-	
-	const sleep = async (sec) =>
+		rock: ['scissors', 'lizard'],
+		paper: ['rock', 'spock'],
+		scissors: ['paper', 'lizard'],
+		lizard: ['spock', 'paper'],
+		spock: ['rock', 'scissors'],
+	};
+
+	const sleep = async (sec: number) =>
 		new Promise((resolver) => setTimeout(resolver, sec * 1000));
 
 	const raffleSecondPlayerMove = async (): Promise<void> => {
-		await sleep(1.75)
+		await sleep(1.75);
 		const raffledMove =
 			defaultMoves[Math.floor(Math.random() * defaultMoves.length)];
 		setSecondPlayerMove(raffledMove);
 	};
 
 	const checkResult = async (): Promise<void> => {
-		await sleep(3.65)
+		await sleep(3.65);
 
-		const firstPlayerWin = rules[gameState.firstPlayer] === gameState.secondPlayer
-		const secondPlayerWin = rules[gameState.secondPlayer] === gameState.firstPlayer
+		const firstPlayerWin = rules[gameState.firstPlayer].some(
+			(move) => move === gameState.secondPlayer
+		);
+		const secondPlayerWin = rules[gameState.secondPlayer].some(
+			(move) => move === gameState.firstPlayer
+		);
 
-		if (firstPlayerWin) proclaimResult('win')
-		else if (secondPlayerWin) proclaimResult('lose')
-		else proclaimResult('draw')
-	}
+		if (firstPlayerWin) proclaimResult('win');
+		else if (secondPlayerWin) proclaimResult('lose');
+		else proclaimResult('draw');
+	};
 
 	const proclaimResult = async (result: Result): Promise<void> => {
-		setResult(result)
-		await sleep(1)
+		setResult(result);
+		await sleep(1);
 
-		const operation = result === 'win' ? 1 : result === 'lose' ? -1 : 0
-		changeScoreValue(operation)
-	}
+		const operation = result === 'win' ? 1 : result === 'lose' ? -1 : 0;
+		changeScoreValue(operation);
+	};
 
 	useEffect(() => {
 		if (!gameState.secondPlayer) {
-			raffleSecondPlayerMove()
-			return 
+			raffleSecondPlayerMove();
+			return;
 		}
 
-		checkResult()
+		checkResult();
 	}, [gameState.secondPlayer]);
 
 	return (
-		<Container className={result ? `showResult` : undefined }>
+		<Container className={result ? `showResult` : undefined}>
 			<PlayerField
 				id="playerOne"
 				move={gameState.firstPlayer}
