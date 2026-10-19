@@ -7,13 +7,24 @@ export const Container = styled.dl`
 	background-color: ${(props) => props.theme.color.neutral.badge.bgColorT1};
 	border-radius: 6px;
 	padding: min(3.5%, 1.8rem) min(8.5%, 3.5rem);
+	max-width: 8.7rem;
+	overflow-y: auto;
 	
 	&.multiplayer {
 		padding: min(3.5%, 1.8rem) min(5.16%, 3.5rem);
 	}
+
+	@media screen and (min-width: 768px) {
+		max-width: 15rem;
+	}
 	
 	@media screen and (min-width: 1600px) {
 		padding: min(3.5%, 4.2rem) min(8.5%, 7.5rem);
+		max-width: 35rem;
+		
+		&.multiplayer {
+			padding: min(2.5%, 3.5rem) min(7.235%, 8.86rem);
+		}
 	}
 `;
 
@@ -34,6 +45,10 @@ export const ScoreText = styled.dt`
 	
 	@media screen and (min-width: 1600px) {
 		font-size: clamp(1.8rem, 1rem + .39vw, 3rem);
+		
+		${Container}.multiplayer & {
+			font-size: clamp(1.8rem, 1rem + .59vw, 3rem);
+		}
 	}
 `;
 
@@ -46,8 +61,11 @@ export const ScoreValue = styled.dd`
 	${Container}.multiplayer & {
 		font-size: clamp(2.5rem, 1.14rem + 2.77vw, 3.8rem);
 	}
-	
 	@media screen and (min-width: 1600px) {
 		font-size: clamp(7.5rem, 1.54rem + 3.77vw, 12rem);
+
+		${Container}.multiplayer & {
+			font-size: clamp(5.5rem, 1.34rem + 2.77vw, 8.8rem);
+		}
 	}
 `;
