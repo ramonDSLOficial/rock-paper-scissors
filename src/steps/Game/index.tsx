@@ -37,26 +37,19 @@ const Game: React.FC = () => {
 		new Promise((resolver) => setTimeout(resolver, sec * 1000));
 
 	const raffleSecondPlayerMove = async (): Promise<void> => {
-		await sleep(1.75);
 		const raffledMove =
 			defaultMoves[Math.floor(Math.random() * defaultMoves.length)];
 		setSecondPlayerMove(raffledMove);
 	};
 
-	const checkResult = async (): Promise<void> => {
-		await sleep(3.65);
-
-		const result = checkWinner();
-
-		proclaimWinner(result);
-	};
-
 	const checkWinner = (): Result => {
-		const firstPlayerWin = rules[gameState.firstPlayer].some(
-			(move) => move === gameState.secondPlayer
+		const { firstPlayer, secondPlayer } = useGameStore.getState().gameState;
+
+		const firstPlayerWin = rules[firstPlayer].some(
+			(move) => move === secondPlayer
 		);
-		const secondPlayerWin = rules[gameState.secondPlayer].some(
-			(move) => move === gameState.firstPlayer
+		const secondPlayerWin = rules[secondPlayer].some(
+			(move) => move === firstPlayer
 		);
 
 		return firstPlayerWin
@@ -92,12 +85,31 @@ const Game: React.FC = () => {
 	};
 
 	useEffect(() => {
-		if (!gameState.secondPlayer && !isMultiplayer) {
-			raffleSecondPlayerMove();
-			return;
-		}
+		let cancelled = false;
 
-		checkResult();
+			if (!gameState.secondPlayer && !isMultiplayer) {
+				await sleep(1.75);
+				if (cancelled) return;
+				raffleSecondPlayerMove();
+				return;
+			}
+
+			const checkResult = async (): Promise<void> => {
+				await sleep(3.65);
+				if (cancelled) return;
+
+				const result = checkWinner();
+
+				proclaimWinner(result);
+			};
+
+			checkResult();
+
+		run();
+
+		return () => {
+			cancelled = true;
+		};
 	}, [gameState.secondPlayer]);
 
 	return (

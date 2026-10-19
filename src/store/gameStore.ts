@@ -50,11 +50,7 @@ export const useGameStore = create<GameStore>((set) => ({
 	changeGameMode: () => set((state) => ({ isMultiplayer: !state.isMultiplayer })),
 	restartGame: () =>
 		set(() => ({
-			gameState: {
-				firstPlayer: null,
-				secondPlayer: null,
-				result: null,
-			},
+			gameState: {},
 			hasGameHapping: false,
 		})),
 	changeScoreValue: (result) =>
