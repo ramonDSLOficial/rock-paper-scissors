@@ -15,8 +15,13 @@ type Rules = {
 };
 
 const Game: React.FC = () => {
-	const { gameState, setSecondPlayerMove, changeScoreValue, restartGame } =
-		useGameStore();
+	const {
+		gameState,
+		setSecondPlayerMove,
+		changeScoreValue,
+		restartGame,
+		isMultiplayer,
+	} = useGameStore();
 	const [result, setResult] = useState<Result | null>(null);
 
 	const rules: Rules = {
@@ -61,7 +66,7 @@ const Game: React.FC = () => {
 	};
 
 	useEffect(() => {
-		if (!gameState.secondPlayer) {
+		if (!gameState.secondPlayer && !isMultiplayer) {
 			raffleSecondPlayerMove();
 			return;
 		}
