@@ -61,32 +61,35 @@ const Game: React.FC = () => {
 
 	const proclaimWinner = async (result: Result): Promise<void> => {
 		setResult(result);
-		setResultMessage(() => {
-			if (!isMultiplayer) {
-				return (
-					'you ' +
-					(result === 'firstPlayer'
-						? 'win'
-						: result === 'secondPlayer'
-						? 'lose'
-						: 'draw')
-				);
-			}
-
-			return result === 'firstPlayer'
-				? 'p1 win'
-				: result === 'secondPlayer'
-				? 'p2 win'
-				: 'You draw';
-		});
+		setResultMessage(getMessage());
 		await sleep(1);
 
 		changeScoreValue(result);
 	};
 
+	const getMessage = (): string => {
+		if (!isMultiplayer) {
+			return (
+				'you ' +
+				(result === 'firstPlayer'
+					? 'win'
+					: result === 'secondPlayer'
+					? 'lose'
+					: 'draw')
+			);
+		}
+
+		return result === 'firstPlayer'
+			? 'p1 win'
+			: result === 'secondPlayer'
+			? 'p2 win'
+			: 'You draw';
+	};
+
 	useEffect(() => {
 		let cancelled = false;
 
+		const run = async (): Promise<void> => {
 			if (!gameState.secondPlayer && !isMultiplayer) {
 				await sleep(1.75);
 				if (cancelled) return;
@@ -104,6 +107,7 @@ const Game: React.FC = () => {
 			};
 
 			checkResult();
+		};
 
 		run();
 
