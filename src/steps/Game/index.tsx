@@ -45,6 +45,12 @@ const Game: React.FC = () => {
 	const checkResult = async (): Promise<void> => {
 		await sleep(3.65);
 
+		const result = checkWinner();
+
+		proclaimWinner(result);
+	};
+
+	const checkWinner = (): Result => {
 		const firstPlayerWin = rules[gameState.firstPlayer].some(
 			(move) => move === gameState.secondPlayer
 		);
@@ -52,17 +58,18 @@ const Game: React.FC = () => {
 			(move) => move === gameState.firstPlayer
 		);
 
-		if (firstPlayerWin) proclaimResult('win');
-		else if (secondPlayerWin) proclaimResult('lose');
-		else proclaimResult('draw');
+		return firstPlayerWin
+			? 'firstPlayer'
+			: secondPlayerWin
+			? 'secondPlayer'
+			: 'draw';
 	};
 
-	const proclaimResult = async (result: Result): Promise<void> => {
+	const proclaimWinner = async (result: Result): Promise<void> => {
 		setResult(result);
 		await sleep(1);
-
-		const operation = result === 'win' ? 1 : result === 'lose' ? -1 : 0;
-		changeScoreValue(operation);
+		
+		changeScoreValue(result);
 	};
 
 	useEffect(() => {

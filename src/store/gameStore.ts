@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import type { Moves } from '../types/types';
+import type { Moves, Result } from '../types/types';
 
 type GameState = {
 	firstPlayer?: Moves;
@@ -20,7 +20,7 @@ type GameStore = {
 	hasExtraMoves: boolean;
 	isMultiplayer: boolean;
 	gameState: GameState;
-	changeScoreValue: (operation: number) => void;
+	changeScoreValue: (result: Result) => void;
 	startGame: () => void;
 	changeAvailableMoves: () => void;
 	changeGameMode: () => void;
@@ -57,9 +57,45 @@ export const useGameStore = create<GameStore>((set) => ({
 			},
 			hasGameHapping: false,
 		})),
-	changeScoreValue: (operation) =>
+	changeScoreValue: (result) =>
 		set((state) => {
-			const newScore = state.score.pve + operation;
-			return { score: { ...state.score, pve: newScore >= 0 ? newScore : 0 } };
+			if (!state.isMultiplayer) {
+				let pveScore = state.score.pve;
+				pveScore =
+					result === 'firstPlayer'
+						? pveScore + 1
+						: result === 'secondPlayer'
+						? pveScore - 1
+						: pveScore;
+
+				return {
+					score: { ...state.score, pve: pveScore >= 0 ? pveScore : 0 },
+				};
+			} else {
+				if (result === 'draw') return;
+				let firstPlayerScore = state.score.pvp.firstPlayer;
+				let SecondPlayerScore = state.score.pvp.secondPlayer;
+
+				firstPlayerScore =
+					result === 'firstPlayer'
+						? firstPlayerScore + 1
+						: firstPlayerScore - 1;
+				SecondPlayerScore =
+					result === 'secondPlayer'
+						? SecondPlayerScore + 1
+						: SecondPlayerScore - 1;
+
+				return {
+					score: {
+						...state.score,
+						pvp: {
+							firstPlayer:
+								firstPlayerScore >= 0 ? firstPlayerScore : 0,
+							secondPlayer:
+								SecondPlayerScore >= 0 ? SecondPlayerScore : 0,
+						},
+					},
+				};
+			}
 		}),
 }));
