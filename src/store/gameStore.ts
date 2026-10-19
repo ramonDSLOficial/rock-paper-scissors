@@ -6,8 +6,16 @@ type GameState = {
 	secondPlayer?: Moves;
 };
 
+type Score = {
+	pve: number;
+	pvp: {
+		firstPlayer: number;
+		secondPlayer: number;
+	};
+};
+
 type GameStore = {
-	score: number;
+	score: Score;
 	hasGameHapping: boolean;
 	hasExtraMoves: boolean;
 	isMultiplayer: boolean;
@@ -22,7 +30,13 @@ type GameStore = {
 };
 
 export const useGameStore = create<GameStore>((set) => ({
-	score: 0,
+	score: {
+		pve: 0,
+		pvp: {
+			firstPlayer: 0,
+			secondPlayer: 0,
+		},
+	},
 	hasGameHapping: false,
 	hasExtraMoves: false,
 	isMultiplayer: true,
@@ -31,7 +45,8 @@ export const useGameStore = create<GameStore>((set) => ({
 	setSecondPlayerMove: (move) =>
 		set((state) => ({ gameState: { ...state.gameState, secondPlayer: move } })),
 	startGame: () => set(() => ({ hasGameHapping: true })),
-	changeAvailableMoves: () => set((state) => ({ hasExtraMoves: !state.hasExtraMoves })),
+	changeAvailableMoves: () =>
+		set((state) => ({ hasExtraMoves: !state.hasExtraMoves })),
 	changeGameMode: () => set((state) => ({ isMultiplayer: !state.isMultiplayer })),
 	restartGame: () =>
 		set(() => ({
@@ -44,7 +59,7 @@ export const useGameStore = create<GameStore>((set) => ({
 		})),
 	changeScoreValue: (operation) =>
 		set((state) => {
-			const newScore = state.score + operation;
-			return { score: newScore >= 0 ? newScore : 0 };
+			const newScore = state.score.pve + operation;
+			return { score: { ...state.score, pve: newScore >= 0 ? newScore : 0 } };
 		}),
 }));

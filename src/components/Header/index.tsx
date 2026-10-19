@@ -38,7 +38,10 @@ const Header: React.FC = () => {
 	return (
 		<Container className={isMultiplayer ? 'multiplayer' : undefined}>
 			{isMultiplayer && (
-				<ScoreCard label={scoreCardText.pvp.firstPlayer} score={score} />
+				<ScoreCard
+					label={scoreCardText.pvp.firstPlayer}
+					score={score.pvp.firstPlayer}
+				/>
 			)}
 
 			<LogoTitle>
@@ -46,8 +49,12 @@ const Header: React.FC = () => {
 			</LogoTitle>
 
 			<ScoreCard
-				label={isMultiplayer ? scoreCardText.pvp.secondPlayer : scoreCardText.pve}
-				score={score}
+				label={
+					isMultiplayer
+						? scoreCardText.pvp.secondPlayer
+						: scoreCardText.pve
+				}
+				score={isMultiplayer ? score.pvp.secondPlayer : score.pve}
 			/>
 		</Container>
 	);
