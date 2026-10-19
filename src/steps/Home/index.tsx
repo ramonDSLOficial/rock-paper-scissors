@@ -32,7 +32,7 @@ const Home: React.FC = () => {
 	};
 
 	useEffect(() => {
-		if (gameState.firstPlayer && gameState.secondPlayer) startGame();		
+		if (gameState.firstPlayer && gameState.secondPlayer) startGame();
 	}, [gameState.firstPlayer, gameState.secondPlayer]);
 
 	return (

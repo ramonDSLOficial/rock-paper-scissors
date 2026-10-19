@@ -23,6 +23,7 @@ const Game: React.FC = () => {
 		isMultiplayer,
 	} = useGameStore();
 	const [result, setResult] = useState<Result | null>(null);
+	const [resultMessage, setResultMessage] = useState<string | null>(null);
 
 	const rules: Rules = {
 		rock: ['scissors', 'lizard'],
@@ -67,8 +68,26 @@ const Game: React.FC = () => {
 
 	const proclaimWinner = async (result: Result): Promise<void> => {
 		setResult(result);
+		setResultMessage(() => {
+			if (!isMultiplayer) {
+				return (
+					'you ' +
+					(result === 'firstPlayer'
+						? 'win'
+						: result === 'secondPlayer'
+						? 'lose'
+						: 'draw')
+				);
+			}
+
+			return result === 'firstPlayer'
+				? 'p1 win'
+				: result === 'secondPlayer'
+				? 'p2 win'
+				: 'You draw';
+		});
 		await sleep(1);
-		
+
 		changeScoreValue(result);
 	};
 
@@ -95,7 +114,7 @@ const Game: React.FC = () => {
 			/>
 
 			<ResultContainer id="result">
-				<Message>you {result}</Message>
+				<Message>{resultMessage}</Message>
 				<RestartBtn onClick={restartGame}>play again</RestartBtn>
 			</ResultContainer>
 		</Container>
