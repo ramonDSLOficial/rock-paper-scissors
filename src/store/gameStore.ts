@@ -72,7 +72,7 @@ export const useGameStore = create<GameStore>((set) => ({
 					score: { ...state.score, pve: pveScore >= 0 ? pveScore : 0 },
 				};
 			} else {
-				if (result === 'draw') return state;
+				if (result === 'draw') return {...state};
 				let firstPlayerScore = state.score.pvp.firstPlayer;
 				let SecondPlayerScore = state.score.pvp.secondPlayer;
 
