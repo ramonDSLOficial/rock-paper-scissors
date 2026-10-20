@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 
 import { Container, RulesImage, Title } from './styles';
 import CloseModalBtn from '../../components/CloseModalBtn';
@@ -12,6 +12,7 @@ const Rules: React.FC<RulesProps> = ({ modalRulesRef }) => {
 	const { hasExtraMoves } = useGameStore();
 	const closeModalRules = (): void => modalRulesRef.current.close();
 	const gameMode = !hasExtraMoves ? 'normal' : 'bonus';
+	const titleId = useId();
 
 	const rules = {
 		normal: {
@@ -33,8 +34,13 @@ const Rules: React.FC<RulesProps> = ({ modalRulesRef }) => {
 	};
 
 	return (
-		<Container id='rules' $hasExtraMoves={hasExtraMoves} ref={modalRulesRef}>
-			<Title>rules</Title>
+		<Container
+			id="rules"
+			aria-labelledby={titleId}
+			$hasExtraMoves={hasExtraMoves}
+			ref={modalRulesRef}
+		>
+			<Title id={titleId}>rules</Title>
 
 			<RulesImage
 				$hasExtraMoves={hasExtraMoves}
@@ -42,7 +48,11 @@ const Rules: React.FC<RulesProps> = ({ modalRulesRef }) => {
 				alt={rules[gameMode].text}
 			/>
 
-			<CloseModalBtn title="close rules" onClick={closeModalRules} />
+			<CloseModalBtn
+				title="close rules"
+				aria-controls="rules"
+				onClick={closeModalRules}
+			/>
 		</Container>
 	);
 };

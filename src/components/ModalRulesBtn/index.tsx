@@ -12,7 +12,7 @@ const ModalRulesBtn: React.FC<ModalRulesBtnProps> = ({ modalRulesRef }) => {
 	return (
 		<Container
 			aria-haspopup="dialog"
-			aria-expanded={modalRulesRef.current.open}
+			aria-expanded={modalRulesRef.current?.open ?? undefined}
 			aria-controls="rules"
 			onClick={openRulesModal}
 		>
