@@ -25,8 +25,8 @@ export const Container = styled.dialog`
 	}
 
 	@media screen and (min-width: 768px) {
-		max-width: 32vw;
-		max-height: 30vw;
+		max-width: 42vw;
+		max-height: 46vw;
 		transform: translateY(-45%);
 
 		&[open] {
@@ -68,4 +68,17 @@ export const Settings = styled.div`
 	}
 `;
 
-export const ResetScore = styled.button``;
+export const ResetScore = styled.button`
+	color: ${props => props.theme.color.neutral.text.textT1};
+	font-size: clamp(1.3rem, .45rem + .44vw, 2rem);
+	text-shadow: 1px 1px 1px #000;
+	border: 1.5px solid ${props => props.theme.color.neutral.badge.bgColorT2};
+	background-color: #dc2e4eff;
+	width: 66%;
+	margin-inline: auto;
+	margin-top: 15%;
+
+	@media screen and (min-width: 1600px) {
+		font-size: clamp(2.6rem, 1.04rem + .86vw, 5.3rem);
+	}
+`;
