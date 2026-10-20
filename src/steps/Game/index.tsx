@@ -61,13 +61,13 @@ const Game: React.FC = () => {
 
 	const proclaimWinner = async (result: Result): Promise<void> => {
 		setResult(result);
-		setResultMessage(getMessage());
+		setResultMessage(getMessage(result));
 		await sleep(1);
 
 		changeScoreValue(result);
 	};
 
-	const getMessage = (): string => {
+	const getMessage = (result: Result): string => {
 		if (!isMultiplayer) {
 			return (
 				'you ' +
