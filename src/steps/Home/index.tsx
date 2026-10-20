@@ -36,8 +36,8 @@ const Home: React.FC = () => {
 	}, [gameState.firstPlayer, gameState.secondPlayer]);
 
 	return (
-		<Container $hasExtraMoves={hasExtraMoves}>
-			{availableMoves.map((move) => {
+		<Container role='group' aria-label='moves field' $hasExtraMoves={hasExtraMoves}>
+			{availableMoves.map((move: Moves) => {
 				return (
 					<Move key={move} move={move} id={move} onClick={selectMove} />
 				);
