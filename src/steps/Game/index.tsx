@@ -121,14 +121,14 @@ const Game: React.FC = () => {
 			<PlayerField
 				id="playerOne"
 				move={gameState.firstPlayer}
-				player="you picked"
+				player={!isMultiplayer ? 'you picked' : 'Player 1 picked'}
 			/>
 			<PlayerField
 				id="playerTwo"
 				aria-live={!isMultiplayer ? 'polite' : undefined}
 				aria-atomic
 				move={gameState.secondPlayer}
-				player="the house picked"
+				player={!isMultiplayer ? 'the house picked' : 'Player 2 picked'}
 			/>
 
 			<ResultContainer
