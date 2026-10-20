@@ -1,6 +1,6 @@
 import React, { useId } from 'react';
 
-import { Container, Settings } from './styles';
+import { Container, ResetScore, Settings } from './styles';
 import Option from './Option';
 import CloseModalBtn from '../CloseModalBtn';
 import { useGameStore } from '../../store/gameStore';
@@ -10,7 +10,7 @@ interface ConfigsModalProps {
 }
 
 const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
-	const { hasExtraMoves, changeAvailableMoves, isMultiplayer, changeGameMode } =
+	const { hasExtraMoves, changeAvailableMoves, isMultiplayer, changeGameMode, clearScores } =
 		useGameStore();
 	const closeModalConfigs = (): void => modalConfigsRef.current.close();
 	const titleId = useId();
@@ -30,6 +30,8 @@ const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
 					checked={isMultiplayer}
 					onChange={changeGameMode}
 				/>
+
+				<ResetScore onClick={clearScores} title='reset score'>reset score</ResetScore>
 			</Settings>
 
 			<CloseModalBtn

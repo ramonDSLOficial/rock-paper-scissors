@@ -67,3 +67,5 @@ export const Settings = styled.div`
 		gap: min(1.25vh, 2.34rem);
 	}
 `;
+
+export const ResetScore = styled.button``;
