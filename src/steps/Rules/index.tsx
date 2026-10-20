@@ -33,7 +33,7 @@ const Rules: React.FC<RulesProps> = ({ modalRulesRef }) => {
 	};
 
 	return (
-		<Container $hasExtraMoves={hasExtraMoves} ref={modalRulesRef}>
+		<Container id='rules' $hasExtraMoves={hasExtraMoves} ref={modalRulesRef}>
 			<Title>rules</Title>
 
 			<RulesImage
