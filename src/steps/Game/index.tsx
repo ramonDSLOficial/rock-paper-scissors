@@ -117,7 +117,7 @@ const Game: React.FC = () => {
 	}, [gameState.secondPlayer]);
 
 	return (
-		<Container className={result ? `showResult` : undefined}>
+		<Container role="group" className={result ? `showResult` : undefined}>
 			<PlayerField
 				id="playerOne"
 				move={gameState.firstPlayer}
@@ -125,13 +125,22 @@ const Game: React.FC = () => {
 			/>
 			<PlayerField
 				id="playerTwo"
+				aria-live={!isMultiplayer ? 'polite' : undefined}
+				aria-atomic
 				move={gameState.secondPlayer}
 				player="the house picked"
 			/>
 
-			<ResultContainer id="result">
-				<Message>{resultMessage}</Message>
-				<RestartBtn onClick={restartGame}>play again</RestartBtn>
+			<ResultContainer
+				id="result"
+				aria-labelledby="message"
+				aria-live="polite"
+				aria-atomic
+			>
+				<Message id="message">{resultMessage}</Message>
+				<RestartBtn title="play again" onClick={restartGame}>
+					play again
+				</RestartBtn>
 			</ResultContainer>
 		</Container>
 	);
