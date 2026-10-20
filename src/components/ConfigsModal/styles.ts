@@ -48,7 +48,7 @@ export const Container = styled.dialog`
 	}
 `;
 
-export const Fieldset = styled.fieldset`
+export const Settings = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 15px;

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useId } from 'react';
 
-import { Container, Fieldset } from './styles';
+import { Container, Settings } from './styles';
 import Option from './Option';
 import CloseModalBtn from '../CloseModalBtn';
 import { useGameStore } from '../../store/gameStore';
@@ -13,12 +13,13 @@ const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
 	const { hasExtraMoves, changeAvailableMoves, isMultiplayer, changeGameMode } =
 		useGameStore();
 	const closeModalConfigs = (): void => modalConfigsRef.current.close();
+	const titleId = useId();
 
 	return (
-		<Container ref={modalConfigsRef}>
-			<h2>Game Configurations</h2>
+		<Container id="configs" aria-labelledby={titleId} ref={modalConfigsRef}>
+			<h2 id={titleId}>Game Configurations</h2>
 
-			<Fieldset>
+			<Settings aria-label="settings">
 				<Option
 					label="extra moves"
 					checked={hasExtraMoves}
@@ -29,9 +30,13 @@ const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
 					checked={isMultiplayer}
 					onChange={changeGameMode}
 				/>
-			</Fieldset>
+			</Settings>
 
-			<CloseModalBtn title="close configs" onClick={closeModalConfigs} />
+			<CloseModalBtn
+				title="close configs"
+				aria-controls="configs"
+				onClick={closeModalConfigs}
+			/>
 		</Container>
 	);
 };
