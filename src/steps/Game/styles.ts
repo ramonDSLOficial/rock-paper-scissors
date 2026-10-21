@@ -25,7 +25,7 @@ export const Container = styled.section`
 		justify-content: space-evenly;
 	}
 
-	@media screen and (min-width: 1199px) {
+	@media screen and (min-width: 950px) {
 		grid-template-columns: 0.3fr 0fr 0.3fr;
 		grid-template-rows: 1fr;
 		grid-template-areas: 'playerOne result playerTwo';
@@ -33,9 +33,10 @@ export const Container = styled.section`
 		justify-content: center;
 		gap: 2.5vh 1.5vw;
 		transition: grid-template-columns 1.55s ease-in-out, gap 1.55s ease-in-out;
-
+		
 		&.showResult {
 			grid-template-columns: .8fr minmax(0.75fr, 53rem) .8fr;
+			grid-template-rows: 1fr;
 			gap: 2.5vh 5vw;
 		}
 	}
