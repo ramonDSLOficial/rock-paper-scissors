@@ -1,78 +1,46 @@
-# React + TypeScript + Vite
+# Rock, Paper, Scissors
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Desafio de nível avançado para recriar o famoso jogo de pedra, papel e tesoura o mais próximo do design como possível. Com a possibilidade de adicionar novos movimentos para tornar o jogo mais complexo.
 
-Currently, two official plugins are available:
+![Preview do projeto](./public/design/desktop.PNG)
+![Preview do projeto](./public/design/mobile.PNG)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔗 Links
 
-## React Compiler
+-   Site: [link do deploy](https://RamonDSLOficial.github.io/rock-paper-scissors)
+-   Desafio original: [Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH)
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🎯 Funcionalidades
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+-   Ver o layout ideal dependendo do tamanho da tela do dispositivo
+-   Ver estados de hover para elementos interativos
+-   Adicionar os movimentos extras para aumentar a complexidade
+-   Alterar o modo de jogo, para jogar contra o computador e com dois player
+-   Persistir a pontuação do jogo
+-   Regras do jogo exibindo conforme o modo selecionado
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+-   React
+-   TypeScript
+-   Styled-components
+-   Zustand
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📚 O que aprendi
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+-   Trabalhar com a tag `dialog` para diminuir o uso de states e nível de lógica para abrir e fechar o modais
+-   Treinar o uso de tags semânticas e atributos aria para melhorar a acessibilidade da aplicação
+-   Utilizar o gerenciador de estados Zustand para encapsular lógica e evitar repetição ou prop drilling, deixando de poluir o código
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🚀 Como rodar o projeto
 
+```bash
+git clone https://github.com/RamonDSLOficial/rock-paper-scissors.git
+cd seu-repo
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 👤 Autor
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
-```
+-   GitHub - [@RamonDSLOficial](https://github.com/RamonDSLOficial)
