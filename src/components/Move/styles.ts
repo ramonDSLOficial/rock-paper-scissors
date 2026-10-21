@@ -82,6 +82,21 @@ export const Container = styled.button<MoveStyledProps>`
 				`;
 		}}
 	}
+	@media screen and (min-width: 968px) and (max-height: 600px) {
+		${({ $move, $hasExtraMoves }) => {
+			if ($move)
+				return css`
+					border-width: min(1.63vw, ${!$hasExtraMoves ? '1.6rem' : '1.4rem'});
+					padding: ${!$hasExtraMoves
+						? 'min(6.865vw, 1.685rem)'
+						: 'min(6.865vw, 1.385rem)'};
+				`;
+			else
+				return css`
+					padding: min(3.965vw, 2.464rem);
+				`;
+		}}
+	}
 	@media screen and (min-width: 1199px) {
 		border-width: ${({ $hasExtraMoves }) =>
 			!$hasExtraMoves ? 'min(3.33vw, 1.7rem)' : 'min(1.03vw, 1.8rem)'};
@@ -171,6 +186,10 @@ export const Image = styled.img<MoveStyledProps>`
 	@media screen and (min-width: 768px) {
 		width: min(11.33vw, 6.895rem);
 		height: min(12vw, 6.895rem);
+	}
+	@media screen and (min-width: 968px) and (max-height: 600px) {
+		width: min(6.33vw, 4.095rem);
+		height: min(6.33vw, 4.095rem);
 	}
 	@media screen and (min-width: 1199px) {
 		width: ${({ $hasExtraMoves }) =>
