@@ -171,6 +171,11 @@ export const Container = styled.section<GameCommonStyles>`
 				`;
 		}}
 	}
+	@media screen and (max-width: 968px) and (max-height: 600px) {
+		width: min(23%, 18rem);
+		${({ $hasExtraMoves }) =>
+		$hasExtraMoves && css`&&{margin-bottom: 10%}`}
+	}
 	@media screen and (min-width: 968px) and (max-height: 600px) {
 		${({ $hasExtraMoves }) => {
 			if (!$hasExtraMoves)

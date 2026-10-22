@@ -20,6 +20,9 @@ export const Container = styled.header`
 	@media screen and (max-width: 380px) and (max-height: 650px) {
 		margin-bottom: 13%;
 	}
+	@media screen and (max-width: 968px) and (max-height: 600px) {
+		margin-block-end: 8%;
+	}
 	@media screen and (min-width: 1199px) {
 		margin-bottom: 2%;
 	}

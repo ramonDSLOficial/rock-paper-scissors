@@ -63,7 +63,7 @@ export const Container = styled.button<MoveStyledProps>`
 
 		${({ $move, theme: { color } }) =>
 			$move
-				? `box-shadow: 0 4.869px 0 ${
+				? `box-shadow: 0 3.469px 0 ${
 						color.moves[$move + 'Shadow']
 				  }, ${boxShadow}`
 				: ''}
@@ -82,11 +82,39 @@ export const Container = styled.button<MoveStyledProps>`
 				`;
 		}}
 	}
+	@media screen and (max-width: 968px) and (max-height: 600px) {
+		${({ $move, $hasExtraMoves, theme: { color } }) => {
+			if ($move)
+				return css`
+					border-width: min(
+						0.93vw,
+						${!$hasExtraMoves ? '1.3rem' : '1rem'}
+					);
+					padding: ${!$hasExtraMoves
+						? 'min(1.365vw, 1.085rem)'
+						: 'min(1.365vw, 1.285rem)'};
+
+					${
+						$move
+							? `box-shadow: 0 3.669px 0 ${
+									color.moves[$move + 'Shadow']
+							  }, ${boxShadow}`
+							: ''}
+				`;
+			else
+				return css`
+					padding: min(3.965vw, 2.464rem);
+				`;
+		}}
+	}
 	@media screen and (min-width: 968px) and (max-height: 600px) {
 		${({ $move, $hasExtraMoves }) => {
 			if ($move)
 				return css`
-					border-width: min(1.63vw, ${!$hasExtraMoves ? '1.6rem' : '1.4rem'});
+					border-width: min(
+						1.63vw,
+						${!$hasExtraMoves ? '1.6rem' : '1.4rem'}
+					);
 					padding: ${!$hasExtraMoves
 						? 'min(6.865vw, 1.685rem)'
 						: 'min(6.865vw, 1.385rem)'};
@@ -186,6 +214,10 @@ export const Image = styled.img<MoveStyledProps>`
 	@media screen and (min-width: 768px) {
 		width: min(11.33vw, 6.895rem);
 		height: min(12vw, 6.895rem);
+	}
+	@media screen and (max-width: 968px) and (max-height: 600px) {
+		width: min(3.33vw, 3.895rem);
+		height: min(3.63vw, 3.895rem);
 	}
 	@media screen and (min-width: 968px) and (max-height: 600px) {
 		width: min(6.33vw, 4.095rem);
