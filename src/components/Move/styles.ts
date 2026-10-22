@@ -83,29 +83,31 @@ export const Container = styled.button<MoveStyledProps>`
 		}}
 	}
 	@media screen and (max-width: 968px) and (max-height: 600px) {
-		${({ $move, $hasExtraMoves, theme: { color } }) => {
-			if ($move)
-				return css`
-					border-width: min(
-						0.93vw,
-						${!$hasExtraMoves ? '1.3rem' : '1rem'}
-					);
-					padding: ${!$hasExtraMoves
-						? 'min(1.365vw, 1.085rem)'
-						: 'min(1.365vw, 1.285rem)'};
+		.home & {
+			${({ $move, $hasExtraMoves, theme: { color } }) => {
+				if ($move)
+					return css`
+						border-width: min(
+							0.93vw,
+							${!$hasExtraMoves ? '1.3rem' : '1rem'}
+						);
+						padding: ${!$hasExtraMoves
+							? 'min(1.365vw, 1.085rem)'
+							: 'min(1.365vw, 1.285rem)'};
 
-					${
-						$move
-							? `box-shadow: 0 3.669px 0 ${
-									color.moves[$move + 'Shadow']
-							  }, ${boxShadow}`
-							: ''}
-				`;
-			else
-				return css`
-					padding: min(3.965vw, 2.464rem);
-				`;
-		}}
+						${
+							$move
+								? `box-shadow: 0 3.669px 0 ${
+										color.moves[$move + 'Shadow']
+								}, ${boxShadow}`
+								: ''}
+					`;
+				else
+					return css`
+						padding: min(3.965vw, 2.464rem);
+					`;
+			}}
+		}
 	}
 	@media screen and (min-width: 968px) and (max-height: 600px) {
 		${({ $move, $hasExtraMoves }) => {
@@ -216,8 +218,10 @@ export const Image = styled.img<MoveStyledProps>`
 		height: min(12vw, 6.895rem);
 	}
 	@media screen and (max-width: 968px) and (max-height: 600px) {
-		width: min(3.33vw, 3.895rem);
-		height: min(3.63vw, 3.895rem);
+		.home & {
+			width: min(3.33vw, 3.895rem);
+			height: min(3.63vw, 3.895rem);
+		}
 	}
 	@media screen and (min-width: 968px) and (max-height: 600px) {
 		width: min(6.33vw, 4.095rem);
