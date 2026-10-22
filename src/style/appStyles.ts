@@ -19,7 +19,7 @@ export const Container = styled.div`
 		overflow: hidden;
 	}
 `;
-// FIXME retirar daqui a atribuição de margem para os sections
+
 export const Main = styled.main`
 	display: flex;
 	flex-direction: column;
@@ -29,7 +29,7 @@ export const Main = styled.main`
 	flex: 0.85;
 	padding-bottom: 4vh;
 
-	section {
+	& section {
 		margin: auto 0;
 	}
 
@@ -40,11 +40,6 @@ export const Main = styled.main`
 	}
 	@media screen and (min-width: 768px) {
 		gap: 4vh;
-		
-		section {
-			/* // NOTE passar apenas para Game */
-			margin: 0;
-		}
 	}
 	@media screen and (min-width: 768px) and (min-height: 1000px) {
 		gap: 0;
@@ -60,7 +55,7 @@ export const Main = styled.main`
 	@media screen and (min-width: 1199px) and (min-height: 700px) {
 		gap: 0;
 
-		section {
+		& section {
 			margin-block: auto;
 		}		
 	}

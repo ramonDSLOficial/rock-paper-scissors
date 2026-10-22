@@ -23,6 +23,10 @@ export const Container = styled.section`
 	@media screen and (min-width: 768px) {
 		grid-template-columns: repeat(2, minmax(200px, 35%));
 		justify-content: space-evenly;
+
+		section {
+			margin: 0;
+		}
 	}
 
 	@media screen and (min-width: 950px) {
