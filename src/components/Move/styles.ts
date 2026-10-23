@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import type { GameCommonStyles, Moves } from '../../types/types';
 import { Container as Game } from '../../steps/Game/styles';
-import { Container as Home } from '../../steps/Home/styles';
 interface MoveStyledProps extends GameCommonStyles {
 	$move?: Moves;
 }
@@ -9,17 +8,7 @@ interface MoveStyledProps extends GameCommonStyles {
 const boxShadow = 'inset 0 6.32px 0 #babed2b2';
 const winnerShadowLength = '4.2vw';
 const winnerShadow = `0 0 0 ${winnerShadowLength} #56546943, 0 0 0 calc(${winnerShadowLength} * 2) #3b43633a, 0 0 0 calc(${winnerShadowLength} * 3) #1f375645`;
-/*
-// NOTE quando começar a mexer na parte JS, pegar o aparelho (largura e altura) para criar uma const com os box-shadow só fazendo uma alteração básica, para evitar ter que continuar repetindo toda essa linha de códgo
-// protótipo
-const moveAccentShadow = `
-	${({ $move, theme: { color } }) => {
-		return css<MoveStyledProps>`
-			box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']}, ${boxShadow};
-		`;
-	}}
-`;
-*/
+
 export const Container = styled.button<MoveStyledProps>`
 	border: min(3.33vw, 2rem) solid transparent;
 	border-radius: 50%;
@@ -36,12 +25,12 @@ export const Container = styled.button<MoveStyledProps>`
 					: 'min(4.864vw, 2.865rem)'};
 				background-color: ${color.neutral.badge.bgColorT1};
 				background-clip: padding-box;
-				border-color: ${color.moves[$move + 'Accent']};
-				box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']},
+				border-color: ${color.moves[`${$move}Accent`]};
+				box-shadow: 0 6.869px 0 ${color.moves[`${$move}Shadow`]},
 					${boxShadow};
 
 				${Game} &.winner {
-					box-shadow: 0 6.869px 0 ${color.moves[$move + 'Shadow']},
+					box-shadow: 0 6.869px 0 ${color.moves[`${$move}Shadow`]},
 						${boxShadow}, ${winnerShadow};
 				}
 			`;
@@ -64,7 +53,7 @@ export const Container = styled.button<MoveStyledProps>`
 		${({ $move, theme: { color } }) =>
 			$move
 				? `box-shadow: 0 3.469px 0 ${
-						color.moves[$move + 'Shadow']
+						color.moves[`${$move}Shadow`]
 				  }, ${boxShadow}`
 				: ''}
 	}
@@ -95,12 +84,11 @@ export const Container = styled.button<MoveStyledProps>`
 							? 'min(1.365vw, 1.085rem)'
 							: 'min(1.365vw, 1.285rem)'};
 
-						${
-							$move
-								? `box-shadow: 0 3.669px 0 ${
-										color.moves[$move + 'Shadow']
-								}, ${boxShadow}`
-								: ''}
+						${$move
+							? `box-shadow: 0 3.669px 0 ${
+									color.moves[`${$move}Shadow`]
+							  }, ${boxShadow}`
+							: ''}
 					`;
 				else
 					return css`
@@ -188,7 +176,7 @@ export const Container = styled.button<MoveStyledProps>`
 		${({ $move, $hasExtraMoves }) => {
 			if ($move)
 				return css`
-					${Home} & {
+					.home & {
 						border-width: ${!$hasExtraMoves
 							? 'min(1.23vw, 3.6rem)'
 							: 'min(1.03vw, 2.8rem)'};
