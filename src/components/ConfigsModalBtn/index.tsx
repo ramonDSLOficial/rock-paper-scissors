@@ -2,11 +2,11 @@ import React from 'react';
 
 import { Container } from './styles';
 interface ConfigsModalBtnProps {
-	modalConfigsRef: React.RefObject<HTMLDialogElement>;
+	modalConfigsRef: React.RefObject<HTMLDialogElement | null>;
 }
 
 const ConfigsModalBtn: React.FC<ConfigsModalBtnProps> = ({ modalConfigsRef }) => {
-	const openModalConfigs = (): void => modalConfigsRef.current.showModal();
+	const openModalConfigs = (): void => modalConfigsRef.current?.showModal();
 
 	return (
 		<Container

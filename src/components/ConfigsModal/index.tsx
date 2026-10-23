@@ -6,13 +6,13 @@ import CloseModalBtn from '../CloseModalBtn';
 import { useGameStore } from '../../store/gameStore';
 
 interface ConfigsModalProps {
-	modalConfigsRef: React.RefObject<HTMLDialogElement>;
+	modalConfigsRef: React.RefObject<HTMLDialogElement | null>;
 }
 
 const ConfigsModal: React.FC<ConfigsModalProps> = ({ modalConfigsRef }) => {
 	const { hasExtraMoves, changeAvailableMoves, isMultiplayer, changeGameMode, clearScores } =
 		useGameStore();
-	const closeModalConfigs = (): void => modalConfigsRef.current.close();
+	const closeModalConfigs = (): void => modalConfigsRef.current?.close();
 	const titleId = useId();
 
 	return (

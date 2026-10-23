@@ -5,12 +5,12 @@ import CloseModalBtn from '../../components/CloseModalBtn';
 import { useGameStore } from '../../store/gameStore';
 
 interface RulesProps {
-	modalRulesRef: React.RefObject<HTMLDialogElement>;
+	modalRulesRef: React.RefObject<HTMLDialogElement | null>;
 }
 
 const Rules: React.FC<RulesProps> = ({ modalRulesRef }) => {
 	const { hasExtraMoves } = useGameStore();
-	const closeModalRules = (): void => modalRulesRef.current.close();
+	const closeModalRules = (): void => modalRulesRef.current?.close();
 	const gameMode = !hasExtraMoves ? 'normal' : 'bonus';
 	const titleId = useId();
 

@@ -3,11 +3,11 @@ import React from 'react';
 import { Container } from './styles';
 
 interface ModalRulesBtnProps {
-	modalRulesRef: React.RefObject<HTMLDialogElement>;
+	modalRulesRef: React.RefObject<HTMLDialogElement | null>;
 }
 
 const ModalRulesBtn: React.FC<ModalRulesBtnProps> = ({ modalRulesRef }) => {
-	const openRulesModal = (): void => modalRulesRef.current.showModal();
+	const openRulesModal = (): void => modalRulesRef.current?.showModal();
 
 	return (
 		<Container
