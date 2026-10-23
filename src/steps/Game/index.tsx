@@ -45,10 +45,10 @@ const Game: React.FC = () => {
 	const checkWinner = (): Result => {
 		const { firstPlayer, secondPlayer } = useGameStore.getState().gameState;
 
-		const firstPlayerWin = rules[firstPlayer].some(
+		const firstPlayerWin = rules[firstPlayer!].some(
 			(move) => move === secondPlayer
 		);
-		const secondPlayerWin = rules[secondPlayer].some(
+		const secondPlayerWin = rules[secondPlayer!].some(
 			(move) => move === firstPlayer
 		);
 
