@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
         src: url('/rock-paper-scissors/font/BarlowSemiCondensed-Bold.woff') format('woff'), url('/font/BarlowSemiCondensed-SemiBold.woff') format('woff');
         font-weight: 600;
         font-style: normal;
-        font-display: swamp;
+        font-display: swap;
     }
 
     * {
